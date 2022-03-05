@@ -3,8 +3,10 @@ import Head from 'next/head'
 import { IoIosMoon, IoLogoTwitter, IoLogoGithub, IoLogoLinkedin, IoLogoDribbble, IoIosMail, IoIosBookmark } from "react-icons/io";
 import {FaLaptopCode} from "react-icons/fa";
 import { ImPencil } from "react-icons/im";
+import {useTheme} from 'next-themes'
 
 const Home: NextPage = () => {
+  const {theme, setTheme} = useTheme()
   return (
     <>
       <Head>
@@ -15,29 +17,29 @@ const Home: NextPage = () => {
 
       <div className="container m-auto">
         {/* Navbar */}
-        <div className="flex flex-row items-center bg-white p-2 w-full max-w-4xl mx-auto">
+        <div className="flex flex-row items-center p-2 w-full max-w-4xl mx-auto">
           <span className="bg-indigo-500 rounded-full w-8 h-8 block mr-8"></span>
           <nav className=" flex-1">
             <ul className="flex space-x-4">
               <li>
-                <a href="#" className="text-slate-900 hover:text-orange-400 hover:font-bold">
+                <a href="#" className="text-slate-900 dark:text-slate-50 hover:text-orange-400 hover:font-bold">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-900 hover:text-green-500 hover:font-bold">
+                <a href="#" className="text-slate-900 dark:text-slate-50 hover:text-green-500 hover:font-bold">
                   Notes
                 </a>
               </li>
               <li>
-                <a href="#" className="text-slate-900 hover:text-purple-500 hover:font-bold">
+                <a href="#" className="text-slate-900 dark:text-slate-50 hover:text-purple-500 hover:font-bold">
                   Playground
                 </a>
               </li>
             </ul>
           </nav>
 
-          <button type="button" className="text-2xl">
+          <button type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="text-2xl dark:text-slate-50">
             <IoIosMoon />
           </button>
         </div>
@@ -47,10 +49,10 @@ const Home: NextPage = () => {
           {/* hero */}
           <figure className="flex flex-row space-x-4 justify-start mb-2">
             <div className="flex flex-col flex-1 space-y-4">
-              <h1 className="text-4xl">Stiven Castillo</h1>
+              <h1 className="text-4xl dark:text-white">Stiven Castillo</h1>
 
-              <p className="text-slate-500 font-thin text-xl">Frontend developer at Elenas. Begginer writer, speaker, UI Designer and Tatoo entusiast, based in Armenia, Colombia.</p>
-              <a href="#" className="text-sm underline text-indigo-500">More in about page</a>
+              <p className="text-slate-500 dark:text-slate-300 font-thin text-xl">Frontend developer at Elenas. Begginer writer, speaker, UI Designer and Tatoo entusiast, based in Armenia, Colombia.</p>
+              <a href="#" className="text-sm underline text-indigo-500 dark:text-amber-400">More in about page</a>
             </div>
             <div className="w-36">
               <img
@@ -63,34 +65,34 @@ const Home: NextPage = () => {
 
           {/* Social */}
           <section className="flex flex-col flex-1 space-y-1 mb-8">
-            <span className="text-slate-400 text-xs">Get in touch / Follow</span>
+            <span className="text-slate-400 dark:text-slate-500 text-xs">Get in touch / Follow</span>
             <ul className="flex space-x-4">
               <li>
-                <a href="https://twitter.com/stivncastillo_" target="_blank" className="text-slate-500 hover:text-slate-700 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
+                <a href="https://twitter.com/stivncastillo_" target="_blank" className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
                   <IoLogoTwitter size={19} />
                   <span>Twitter</span>
                 </a>
               </li>
               <li>
-                <a href="https://github.com/stivncastillo" target="_blank" className="text-slate-500 hover:text-slate-700 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
+                <a href="https://github.com/stivncastillo" target="_blank" className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
                   <IoLogoGithub size={19} />
                   <span>Github</span>
                 </a>
               </li>
               <li>
-                <a href="linkedin.com/in/stivncastillo/" target="_blank" className="text-slate-500 hover:text-slate-700 font-bold flex flex-row items-center space-x-1">
+                <a href="linkedin.com/in/stivncastillo/" target="_blank" className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1">
                   <IoLogoLinkedin size={19} />
                   <span>Linkedin</span>
                 </a>
               </li>
               <li>
-                <a href="https://dribbble.com/stivncastillo" target="_blank" className="text-slate-500 hover:text-slate-700 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
+                <a href="https://dribbble.com/stivncastillo" target="_blank" className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
                   <IoLogoDribbble size={19} />
                   <span>Dribbble</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:stivencastillo.90@gmail.com" target="_blank" className="text-slate-500 hover:text-slate-700 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
+                <a href="mailto:stivencastillo.90@gmail.com" target="_blank" className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1" rel="noreferrer">
                   <IoIosMail size={19} />
                   <span>E-mail</span>
                 </a>
@@ -101,34 +103,34 @@ const Home: NextPage = () => {
           {/* Latest post */}
           <section className="flex flex-col flex-1 space-y-1 mb-8">
             <div className="flex flex-row justify-between items-center mb-4">
-              <h2 className="text-3xl font-bold">Latest post</h2>
-              <a href="#" className="text-sm underline text-indigo-500">show more</a>
+              <h2 className="text-3xl font-bold dark:text-slate-50">Latest post</h2>
+              <a href="#" className="text-sm underline text-indigo-500 dark:text-amber-400">show more</a>
             </div>
 
             <div className="flex flex-col">
               {/* Item */}
-              <a href="#" className="group mb-4 hover:bg-slate-50 hover:rounded-lg">
+              <a href="#" className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg">
                 <article className="flex flex-row space-x-4 p-4">
                   <div className="flex flex-col items-center space-y-2">
-                    <div className="flex flex-col bg-indigo-100 rounded-md py-3 px-4 items-center group-hover:bg-indigo-200 text-indigo-500">
+                    <div className="flex flex-col bg-indigo-100 dark:bg-yellow-100 rounded-md py-3 px-4 items-center group-hover:bg-indigo-200 dark:group-hover:bg-yellow-200 text-indigo-500 dark:text-yellow-600">
                       <span className="font-thin font-merri leading-3 text-xs mb-1">OCT</span>
                       <span className="font-bold font-merri leading-3 text-xl">12</span>
                     </div>
 
-                    <span className="text-indigo-500">
-                    <IoIosBookmark size={20} />
+                    <span className="text-indigo-500 dark:text-yellow-500">
+                      <IoIosBookmark size={20} />
                     </span>
                   </div>
 
                   <div className="">
-                    <h3 className="text-2xl font-bold">Design system as knowledge graphs</h3>
-                    <p className="text-slate-500 font-thin">Imagining what design system documentation might look like if we approached the system as a knowledge graph rather than.</p>
+                    <h3 className="text-2xl font-bold dark:text-slate-100">Design system as knowledge graphs</h3>
+                    <p className="text-slate-500 font-thin dark:text-slate-400">Imagining what design system documentation might look like if we approached the system as a knowledge graph rather than.</p>
                   </div>
 
-                  <img src="../public/assets/images/tree.jpg" alt="Tree" className="aspect-square w-24 object-cover rounded-md" />
+                  <img src="/assets/images/tree.jpg" alt="Tree" className="aspect-square w-24 object-cover rounded-md" />
                 </article>
               </a>
-              <a href="#" className="group mb-4 hover:bg-slate-50 hover:rounded-lg">
+              <a href="#" className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg">
                 <article className="flex flex-row space-x-4 p-4">
                   <div className="flex flex-col items-center">
                     <div className="flex flex-col bg-slate-100 rounded-md py-3 px-4 items-center group-hover:bg-slate-200">
@@ -138,14 +140,14 @@ const Home: NextPage = () => {
                   </div>
 
                   <div className="">
-                    <h3 className="text-2xl font-bold">Design system as knowledge graphs</h3>
-                    <p className="text-slate-500 font-thin">Imagining what design system documentation might look like if we approached the system as a knowledge graph rather than.</p>
+                    <h3 className="text-2xl font-bold dark:text-slate-100">Design system as knowledge graphs</h3>
+                    <p className="text-slate-500 font-thin dark:text-slate-400">Imagining what design system documentation might look like if we approached the system as a knowledge graph rather than.</p>
                   </div>
 
-                  <img src="../public/assets/images/tree.jpg" alt="Tree" className="aspect-square w-24 object-cover rounded-md" />
+                  <img src="/assets/images/tree.jpg" alt="Tree" className="aspect-square w-24 object-cover rounded-md" />
                 </article>
               </a>
-              <a href="#" className="group mb-4 hover:bg-slate-50 hover:rounded-lg">
+              <a href="#" className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg">
                 <article className="flex flex-row space-x-4 p-4">
                   <div className="flex flex-col items-center">
                     <div className="flex flex-col bg-slate-100 rounded-md py-3 px-4 items-center group-hover:bg-slate-200">
@@ -155,11 +157,11 @@ const Home: NextPage = () => {
                   </div>
 
                   <div className="">
-                    <h3 className="text-2xl font-bold">Design system as knowledge graphs</h3>
-                    <p className="text-slate-500 font-thin">Imagining what design system documentation might look like if we approached the system as a knowledge graph rather than.</p>
+                    <h3 className="text-2xl font-bold dark:text-slate-100">Design system as knowledge graphs</h3>
+                    <p className="text-slate-500 font-thin dark:text-slate-400">Imagining what design system documentation might look like if we approached the system as a knowledge graph rather than.</p>
                   </div>
 
-                  <img src="../public/assets/images/tree.jpg" alt="Tree" className="aspect-square w-24 object-cover rounded-md" />
+                  <img src="/assets/images/tree.jpg" alt="Tree" className="aspect-square w-24 object-cover rounded-md" />
                 </article>
               </a>
 
@@ -168,7 +170,7 @@ const Home: NextPage = () => {
 
           <section className="">
             <div className="flex flex-row justify-between items-center mb-4">
-              <h2 className="text-3xl font-bold">Featured</h2>
+              <h2 className="text-3xl font-bold dark:text-slate-100">Featured</h2>
             </div>
 
             <div className="grid grid-cols-2 grid-rows-2 gap-6 px-4">
@@ -198,7 +200,7 @@ const Home: NextPage = () => {
               </a>
               <div className="bg-slate-100 rounded-xl m-h-56 p-4 flex flex-col space-y-4">
                 <div className="flex flex-row items-end space-x-4">
-                  <img src="../public/assets/images/book.jpg" alt="Book" className="aspect-auto w-24 object-cover rounded-md" />
+                  <img src="/assets/images/book.jpg" alt="Book" className="aspect-auto w-24 object-cover rounded-md" />
                   <div className="">
                     <span className="text-slate-400 font-thin text-sm">recently read</span>
                     <h4 className="text-xl font-bold">A Short History of Nearly Everything</h4>
@@ -226,7 +228,7 @@ const Home: NextPage = () => {
         </main>
 
       </div>
-      <footer className="bg-white-800 text-slate-400 font-thin p-4 text-center border-t border-t-slate-200 py-8">
+      <footer className="bg-white-800 text-slate-400 dark:text-slate-500 font-thin p-4 text-center border-t border-t-slate-200 dark:border-t-slate-700 py-8">
         <p className="text-sm">Made with love</p>
       </footer>
     </>
