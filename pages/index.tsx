@@ -6,14 +6,12 @@ import {
   IoLogoLinkedin,
   IoLogoDribbble,
   IoIosMail,
-  IoIosBookmark,
 } from 'react-icons/io'
 import { FaLaptopCode } from 'react-icons/fa'
 import { ImPencil } from 'react-icons/im'
 import Image from 'next/image'
-import Container from '../components/Layout/Container'
 import Footer from '../components/Layout/Footer'
-import Navbar from '../components/Layout/Navbar'
+import PostCard from '../components/Posts/PostCard'
 
 const myLoader = ({ src }: { src: string }) => {
   return `${src}`
@@ -28,292 +26,200 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container>
-        {/* Navbar */}
-        <Navbar />
+      {/* hero */}
+      <figure className="flex flex-col-reverse md:flex-row justify-start mb-2">
+        <div className="flex flex-col flex-1 space-y-4 mt-4 md:mt-0">
+          <h1 className="text-4xl dark:text-white">Stiven Castillo</h1>
 
-        {/* Main */}
-        <main className="flex flex-col mx-auto max-w-4xl pt-12 px-4 md:px-8 mb-8">
-          {/* hero */}
-          <figure className="flex flex-col-reverse md:flex-row justify-start mb-2">
-            <div className="flex flex-col flex-1 space-y-4 mt-4 md:mt-0">
-              <h1 className="text-4xl dark:text-white">Stiven Castillo</h1>
+          <p className="text-slate-500 dark:text-slate-300 font-thin text-xl">
+            Frontend developer at Elenas. Begginer writer, speaker, UI Designer
+            and Tatoo entusiast, based in Armenia, Colombia.
+          </p>
+          <a
+            href="#"
+            className="text-sm underline text-indigo-500 dark:text-amber-400"
+          >
+            More in about page
+          </a>
+        </div>
+        <div className="w-24 md:w-36">
+          <Image
+            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=800&q=60"
+            alt="Profile"
+            height={800}
+            width={800}
+            loader={myLoader}
+            className="rounded-full"
+          />
+        </div>
+      </figure>
 
-              <p className="text-slate-500 dark:text-slate-300 font-thin text-xl">
-                Frontend developer at Elenas. Begginer writer, speaker, UI
-                Designer and Tatoo entusiast, based in Armenia, Colombia.
-              </p>
-              <a
-                href="#"
-                className="text-sm underline text-indigo-500 dark:text-amber-400"
-              >
-                More in about page
-              </a>
-            </div>
-            <div className="w-24 md:w-36">
-              <Image
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=800&q=60"
-                alt="Profile"
-                height={800}
-                width={800}
-                loader={myLoader}
-                className="rounded-full"
-              />
-            </div>
-          </figure>
+      {/* Social */}
+      <section className="flex flex-col flex-1 space-y-1 mb-8">
+        <span className="text-slate-400 dark:text-slate-500 text-xs">
+          Get in touch / Follow
+        </span>
+        <ul className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-4">
+          <li>
+            <a
+              href="https://twitter.com/stivncastillo_"
+              target="_blank"
+              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
+              rel="noreferrer"
+            >
+              <IoLogoTwitter size={19} />
+              <span>Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/stivncastillo"
+              target="_blank"
+              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
+              rel="noreferrer"
+            >
+              <IoLogoGithub size={19} />
+              <span>Github</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="linkedin.com/in/stivncastillo/"
+              target="_blank"
+              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
+            >
+              <IoLogoLinkedin size={19} />
+              <span>Linkedin</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://dribbble.com/stivncastillo"
+              target="_blank"
+              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
+              rel="noreferrer"
+            >
+              <IoLogoDribbble size={19} />
+              <span>Dribbble</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:stivencastillo.90@gmail.com"
+              target="_blank"
+              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
+              rel="noreferrer"
+            >
+              <IoIosMail size={19} />
+              <span>E-mail</span>
+            </a>
+          </li>
+        </ul>
+      </section>
 
-          {/* Social */}
-          <section className="flex flex-col flex-1 space-y-1 mb-8">
-            <span className="text-slate-400 dark:text-slate-500 text-xs">
-              Get in touch / Follow
-            </span>
-            <ul className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-4">
-              <li>
-                <a
-                  href="https://twitter.com/stivncastillo_"
-                  target="_blank"
-                  className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-                  rel="noreferrer"
-                >
-                  <IoLogoTwitter size={19} />
-                  <span>Twitter</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/stivncastillo"
-                  target="_blank"
-                  className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-                  rel="noreferrer"
-                >
-                  <IoLogoGithub size={19} />
-                  <span>Github</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="linkedin.com/in/stivncastillo/"
-                  target="_blank"
-                  className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-                >
-                  <IoLogoLinkedin size={19} />
-                  <span>Linkedin</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://dribbble.com/stivncastillo"
-                  target="_blank"
-                  className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-                  rel="noreferrer"
-                >
-                  <IoLogoDribbble size={19} />
-                  <span>Dribbble</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:stivencastillo.90@gmail.com"
-                  target="_blank"
-                  className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-                  rel="noreferrer"
-                >
-                  <IoIosMail size={19} />
-                  <span>E-mail</span>
-                </a>
-              </li>
-            </ul>
-          </section>
+      {/* Latest post */}
+      <section className="flex flex-col flex-1 space-y-1 mb-8">
+        <div className="flex flex-row justify-between items-center mb-4">
+          <h2 className="text-3xl font-bold dark:text-slate-50">Latest post</h2>
+          <a
+            href="#"
+            className="text-sm underline text-indigo-500 dark:text-amber-400"
+          >
+            show more
+          </a>
+        </div>
 
-          {/* Latest post */}
-          <section className="flex flex-col flex-1 space-y-1 mb-8">
-            <div className="flex flex-row justify-between items-center mb-4">
-              <h2 className="text-3xl font-bold dark:text-slate-50">
-                Latest post
-              </h2>
-              <a
-                href="#"
-                className="text-sm underline text-indigo-500 dark:text-amber-400"
-              >
-                show more
-              </a>
-            </div>
+        <div className="flex flex-col">
+          {/* Item */}
+          <PostCard pinned />
+          <PostCard />
+          <PostCard />
+          <PostCard />
+        </div>
+      </section>
 
-            <div className="flex flex-col">
-              {/* Item */}
-              <a
-                href="#"
-                className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg"
-              >
-                <article className="flex flex-row space-x-4 p-4">
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="flex flex-col bg-indigo-100 dark:bg-yellow-100 rounded-md py-3 px-4 items-center group-hover:bg-indigo-200 dark:group-hover:bg-yellow-200 text-indigo-500 dark:text-yellow-600">
-                      <span className="font-thin font-merri leading-3 text-xs mb-1">
-                        OCT
-                      </span>
-                      <span className="font-bold font-merri leading-3 text-xl">
-                        12
-                      </span>
-                    </div>
+      <section>
+        <div className="flex flex-row justify-between items-center mb-4">
+          <h2 className="text-3xl font-bold dark:text-slate-100">Featured</h2>
+        </div>
 
-                    <span className="text-indigo-500 dark:text-yellow-500">
-                      <IoIosBookmark size={20} />
-                    </span>
-                  </div>
-
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold dark:text-slate-100">
-                      Design system as knowledge graphs
-                    </h3>
-                    <p className="text-slate-500 font-thin dark:text-slate-400">
-                      Imagining what design system documentation might look like
-                      if we approached the system as a knowledge graph rather
-                      than.
-                    </p>
-                  </div>
-
-                  <div className="hidden md:block w-24">
-                    <Image
-                      src="/assets/images/tree.jpg"
-                      alt="Tree"
-                      width={96}
-                      height={96}
-                      className="aspect-square object-cover rounded-md"
-                    />
-                  </div>
-                </article>
-              </a>
-              {[1, 2].map((i) => (
-                <a
-                  href="#"
-                  key={i}
-                  className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg"
-                >
-                  <article className="flex flex-row space-x-4 p-4">
-                    <div className="flex flex-col items-center">
-                      <div className="flex flex-col bg-slate-100 rounded-md py-3 px-4 items-center group-hover:bg-slate-200">
-                        <span className="font-thin font-merri leading-3 text-xs mb-1 dark:text-slate-900">
-                          OCT
-                        </span>
-                        <span className="font-bold font-merri leading-3 text-xl dark:text-slate-900">
-                          12
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold dark:text-slate-100">
-                        Design system as knowledge graphs
-                      </h3>
-                      <p className="text-slate-500 font-thin dark:text-slate-400">
-                        Imagining what design system documentation might look
-                        like if we approached the system as a knowledge graph
-                        rather than.
-                      </p>
-                    </div>
-
-                    <div className="hidden md:block w-24">
-                      <Image
-                        objectFit="cover"
-                        src="/assets/images/tree.jpg"
-                        alt="Tree"
-                        width={96}
-                        height={96}
-                        className="aspect-square object-cover rounded-md"
-                      />
-                    </div>
-                  </article>
-                </a>
-              ))}
-            </div>
-          </section>
-
-          <section className="">
-            <div className="flex flex-row justify-between items-center mb-4">
-              <h2 className="text-3xl font-bold dark:text-slate-100">
-                Featured
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 gap-6 px-2 md:px-4">
-              <a href="#">
-                <div className="flex flex-col justify-end bg-slate-800 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-slate-500/50">
-                  <div className="">
-                    <div className="flex flex-row items-center text-white space-x-2 mb-2">
-                      <FaLaptopCode size={24} />
-                      <h4 className="text-xl font-bold">Development</h4>
-                    </div>
-
-                    <p className="text-slate-400">
-                      Useful snnipets, tricks and techniques for web/mobile
-                      development
-                    </p>
-                  </div>
-                </div>
-              </a>
-
-              <a href="">
-                <div className="flex flex-col justify-end bg-green-200 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-green-300/50">
-                  <div className="">
-                    <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
-                      <ImPencil size={20} />
-                      <h4 className="text-xl font-bold">UI Design</h4>
-                    </div>
-
-                    <p className="text-green-600">
-                      Patterns, design systems, bookmarks, related posts... etc.
-                    </p>
-                  </div>
-                </div>
-              </a>
-
-              <div className="bg-slate-100 dark:bg-slate-600 rounded-xl m-h-56 p-4 flex flex-col space-y-4 justify-between">
-                <div className="flex flex-row items-end space-x-4">
-                  <Image
-                    src="/assets/images/book.jpg"
-                    alt="Book"
-                    width={120}
-                    height={202}
-                    className="aspect-auto w-24 object-cover rounded-md"
-                  />
-                  <div className="">
-                    <span className="text-slate-400 dark:text-slate-200 font-thin text-sm">
-                      recently read
-                    </span>
-                    <h4 className="text-xl font-bold text-slate-700 dark:text-white">
-                      A Short History of Nearly Everything
-                    </h4>
-                    <span className="text-slate-400 dark:text-slate-200 font-thin text-sm">
-                      by Bill Bryson
-                    </span>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 gap-6 px-2 md:px-4">
+          <a href="#">
+            <div className="flex flex-col justify-end bg-slate-800 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-slate-500/50">
+              <div className="">
+                <div className="flex flex-row items-center text-white space-x-2 mb-2">
+                  <FaLaptopCode size={24} />
+                  <h4 className="text-xl font-bold">Development</h4>
                 </div>
 
-                <a
-                  href="#"
-                  className="block py-2 px-4 bg-indigo-500 dark:bg-amber-500 text-white text-center text-sm font-bold rounded-md"
-                >
-                  What I&apos;m reading
-                </a>
+                <p className="text-slate-400">
+                  Useful snnipets, tricks and techniques for web/mobile
+                  development
+                </p>
               </div>
-              <a href="">
-                <div className="flex flex-col justify-end bg-yellow-100 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-yellow-300/50">
-                  <div className="">
-                    <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
-                      <ImPencil size={20} />
-                      <h4 className="text-xl font-bold">UI Design</h4>
-                    </div>
-
-                    <p className="text-yellow-600">
-                      Patterns, design systems, bookmarks, related posts... etc.
-                    </p>
-                  </div>
-                </div>
-              </a>
             </div>
-          </section>
-        </main>
-      </Container>
+          </a>
+
+          <a href="">
+            <div className="flex flex-col justify-end bg-green-200 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-green-300/50">
+              <div className="">
+                <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
+                  <ImPencil size={20} />
+                  <h4 className="text-xl font-bold">UI Design</h4>
+                </div>
+
+                <p className="text-green-600">
+                  Patterns, design systems, bookmarks, related posts... etc.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <div className="bg-slate-100 dark:bg-slate-600 rounded-xl m-h-56 p-4 flex flex-col space-y-4 justify-between">
+            <div className="flex flex-row items-end space-x-4">
+              <Image
+                src="/assets/images/book.jpg"
+                alt="Book"
+                width={120}
+                height={202}
+                className="aspect-auto w-24 object-cover rounded-md"
+              />
+              <div className="">
+                <span className="text-slate-400 dark:text-slate-200 font-thin text-sm">
+                  recently read
+                </span>
+                <h4 className="text-xl font-bold text-slate-700 dark:text-white">
+                  A Short History of Nearly Everything
+                </h4>
+                <span className="text-slate-400 dark:text-slate-200 font-thin text-sm">
+                  by Bill Bryson
+                </span>
+              </div>
+            </div>
+
+            <a
+              href="#"
+              className="block py-2 px-4 bg-indigo-500 dark:bg-amber-500 text-white text-center text-sm font-bold rounded-md"
+            >
+              What I&apos;m reading
+            </a>
+          </div>
+          <a href="">
+            <div className="flex flex-col justify-end bg-yellow-100 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-yellow-300/50">
+              <div className="">
+                <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
+                  <ImPencil size={20} />
+                  <h4 className="text-xl font-bold">UI Design</h4>
+                </div>
+
+                <p className="text-yellow-600">
+                  Patterns, design systems, bookmarks, related posts... etc.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
 
       <Footer />
     </>
