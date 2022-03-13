@@ -2,16 +2,8 @@ import React, { useState } from 'react'
 import Head from 'next/head'
 
 import { getAllFilesFrontMatter } from '../lib/mdx'
-import BlogPost from '../components/BlogPost'
-import { ReadTimeResults } from 'reading-time'
+import PostCard from '../components/Posts/PostCard'
 
-type FrontMatter = {
-  wordCount: number
-  readingTime: ReadTimeResults
-  slug: any
-  title: string
-  publishedAt: string
-}
 export default function Blog({ posts }: { posts: FrontMatter[] }) {
   const [searchValue, setSearchValue] = useState('')
 
@@ -27,11 +19,11 @@ export default function Blog({ posts }: { posts: FrontMatter[] }) {
   return (
     <>
       <Head>
-        <title>Blog - Benjamin Carlson</title>
+        <title>Stiven Castillo | Blog</title>
       </Head>
       {!filteredBlogPosts.length && 'No posts found :('}
       {filteredBlogPosts.map((frontMatter: FrontMatter) => (
-        <BlogPost key={frontMatter.title} {...frontMatter} />
+        <PostCard key={frontMatter.slug} data={frontMatter} slim />
       ))}
     </>
   )

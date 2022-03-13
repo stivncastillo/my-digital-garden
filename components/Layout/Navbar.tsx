@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoIosMoon, IoIosSunny } from 'react-icons/io'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 const Navbar: React.VFC = () => {
   const { theme, setTheme } = useTheme()
@@ -10,12 +11,11 @@ const Navbar: React.VFC = () => {
       <nav className=" flex-1">
         <ul className="flex space-x-4">
           <li>
-            <a
-              href="#"
-              className="text-slate-900 dark:text-slate-50 hover:text-orange-400 hover:font-bold"
-            >
-              Blog
-            </a>
+            <Link href="/blog">
+              <a className="text-slate-900 dark:text-slate-50 hover:text-orange-400 hover:font-bold">
+                Blog
+              </a>
+            </Link>
           </li>
           <li>
             <a

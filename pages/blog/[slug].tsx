@@ -2,24 +2,27 @@ import { getFiles, getFileBySlug } from '../../lib/mdx'
 import BlogLayout from '../../layout/blog'
 import { MDXComponents } from '../../components/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
-import { ReadTimeResults } from 'reading-time'
+import Head from 'next/head'
 
 interface Props {
   mdxSource: any
-  frontMatter: {
-    wordCount: number
-    readingTime: ReadTimeResults
-    slug: any
-  }
+  frontMatter: FrontMatter
 }
 
 const components = { ...MDXComponents }
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
+  const { title } = frontMatter
   return (
-    <BlogLayout frontMatter={frontMatter}>
-      <MDXRemote {...mdxSource} components={components} />
-    </BlogLayout>
+    <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+
+      <BlogLayout frontMatter={frontMatter}>
+        <MDXRemote {...mdxSource} components={components} />
+      </BlogLayout>
+    </>
   )
 }
 

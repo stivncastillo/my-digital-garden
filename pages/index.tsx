@@ -10,7 +10,6 @@ import {
 import { FaLaptopCode } from 'react-icons/fa'
 import { ImPencil } from 'react-icons/im'
 import Image from 'next/image'
-import Footer from '../components/Layout/Footer'
 import PostCard from '../components/Posts/PostCard'
 
 const myLoader = ({ src }: { src: string }) => {
@@ -220,8 +219,6 @@ const Home: NextPage = () => {
           </a>
         </div>
       </section>
-
-      <Footer />
     </>
   )
 }

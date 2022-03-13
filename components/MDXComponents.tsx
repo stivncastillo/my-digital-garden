@@ -1,36 +1,18 @@
 import { ClassAttributes, HTMLAttributes } from 'react'
+import CustomLink from './Common/CustomAnchor'
+import Divider from './Common/Divider'
 
 export const MDXComponents = {
-  h1: (
+  ul: (
     props: JSX.IntrinsicAttributes &
-      ClassAttributes<HTMLHeadingElement> &
-      HTMLAttributes<HTMLHeadingElement>
-  ) => <h1 className="text-red-500" {...props} />,
-  h2: (
+      ClassAttributes<HTMLUListElement> &
+      HTMLAttributes<HTMLUListElement>
+  ) => <ul className="list-disc list-inside ml-6 my-2" {...props} />,
+  ol: (
     props: JSX.IntrinsicAttributes &
-      ClassAttributes<HTMLHeadingElement> &
-      HTMLAttributes<HTMLHeadingElement>
-  ) => <h2 {...props} />,
-  h3: (
-    props: JSX.IntrinsicAttributes &
-      ClassAttributes<HTMLHeadingElement> &
-      HTMLAttributes<HTMLHeadingElement>
-  ) => <h3 {...props} />,
-  h4: (
-    props: JSX.IntrinsicAttributes &
-      ClassAttributes<HTMLHeadingElement> &
-      HTMLAttributes<HTMLHeadingElement>
-  ) => <h4 {...props} />,
-  h5: (
-    props: JSX.IntrinsicAttributes &
-      ClassAttributes<HTMLHeadingElement> &
-      HTMLAttributes<HTMLHeadingElement>
-  ) => <h5 {...props} />,
-  h6: (
-    props: JSX.IntrinsicAttributes &
-      ClassAttributes<HTMLHeadingElement> &
-      HTMLAttributes<HTMLHeadingElement>
-  ) => <h6 {...props} />,
+      ClassAttributes<HTMLOListElement> &
+      HTMLAttributes<HTMLOListElement>
+  ) => <ol className="list-decimal list-inside ml-6 my-2" {...props} />,
   p: (
     props: JSX.IntrinsicAttributes &
       ClassAttributes<HTMLHeadingElement> &
@@ -40,10 +22,39 @@ export const MDXComponents = {
     props: JSX.IntrinsicAttributes &
       ClassAttributes<HTMLHeadingElement> &
       HTMLAttributes<HTMLHeadingElement>
-  ) => <blockquote className="bg-blue-400" {...props} />,
-  inlineCode: (
+  ) => (
+    <blockquote
+      className="p-4 italic border-l-4 bg-slate-100 dark:bg-slate-800 rounded-md dark:text-slate-400 text-slate-500 border-slate-300 dark:border-slate-600 quote"
+      {...props}
+    />
+  ),
+  code: (
     props: JSX.IntrinsicAttributes &
       ClassAttributes<HTMLHeadingElement> &
       HTMLAttributes<HTMLHeadingElement>
-  ) => <p className="bg-red-400" {...props} />,
+  ) => <code {...props} />,
+  hr: (
+    props: JSX.IntrinsicAttributes &
+      ClassAttributes<HTMLHeadingElement> &
+      HTMLAttributes<HTMLHeadingElement>
+  ) => <Divider {...props} />,
+  table: (
+    props: JSX.IntrinsicAttributes &
+      ClassAttributes<HTMLTableElement> &
+      HTMLAttributes<HTMLTableElement>
+  ) => (
+    <div className="mb-4">
+      <table className="min-w-full" {...props} />
+    </div>
+  ),
+  img: (
+    props: JSX.IntrinsicAttributes &
+      ClassAttributes<HTMLImageElement> &
+      HTMLAttributes<HTMLImageElement>
+  ) => (
+    <div className="w-full">
+      <img className="mx-auto w-full" {...props} />
+    </div>
+  ),
+  a: CustomLink,
 }

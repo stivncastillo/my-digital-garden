@@ -13,8 +13,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/mdx.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/mdx.js", "lib/remark-img-to-jsx.js", "lib/**/*.d.ts"],
   "exclude": ["node_modules"]
 }
