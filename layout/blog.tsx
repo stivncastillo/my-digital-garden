@@ -29,7 +29,7 @@ const BlogLayout = ({ children, frontMatter }: Props) => {
         <Divider />
       </header>
 
-      {children}
+      <div id="blog-layout">{children}</div>
     </>
   )
 }

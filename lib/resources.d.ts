@@ -6,4 +6,5 @@ type FrontMatter = {
   title: string
   publishedAt: string
   image: string
+  pinned: boolean
 }

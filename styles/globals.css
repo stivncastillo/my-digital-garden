@@ -8,9 +8,6 @@
     font-family: 'Open Sans', 'Merriweather Sans', sans-serif;
     font-size: 16px;
   }
-  a {
-    @apply underline text-indigo-500 dark:text-amber-400;
-  }
   h1 {
     @apply font-bold text-5xl mb-2 leading-tight;
     font-family: 'Merriweather Sans', 'Open Sans', sans-serif;
@@ -53,6 +50,10 @@
   }
   tbody tr td {
     @apply py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400;
+  }
+
+  #blog-layout a {
+    @apply underline text-indigo-500 dark:text-amber-400;
   }
 }
 

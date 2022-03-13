@@ -11,12 +11,23 @@ import { FaLaptopCode } from 'react-icons/fa'
 import { ImPencil } from 'react-icons/im'
 import Image from 'next/image'
 import PostCard from '../components/Posts/PostCard'
+import { getAllFilesFrontMatter } from '../lib/mdx'
 
 const myLoader = ({ src }: { src: string }) => {
   return `${src}`
 }
 
-const Home: NextPage = () => {
+interface Props {
+  posts: FrontMatter[]
+}
+
+const Home: NextPage<Props> = ({ posts }) => {
+  const filteredBlogPosts = posts.sort(
+    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+  )
+
+  const pinnedPosts = filteredBlogPosts.find((post) => post.pinned)
+
   return (
     <>
       <Head>
@@ -129,11 +140,10 @@ const Home: NextPage = () => {
         </div>
 
         <div className="flex flex-col">
-          {/* Item */}
-          <PostCard pinned />
-          <PostCard />
-          <PostCard />
-          <PostCard />
+          {pinnedPosts && <PostCard data={pinnedPosts} pinned />}
+          {filteredBlogPosts.slice(0, 2).map((frontMatter: FrontMatter) => (
+            <PostCard key={frontMatter.slug} data={frontMatter} />
+          ))}
         </div>
       </section>
 
@@ -221,6 +231,12 @@ const Home: NextPage = () => {
       </section>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter('blog')
+
+  return { props: { posts } }
 }
 
 export default Home
