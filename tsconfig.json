@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/mdx.js", "lib/remark-img-to-jsx.js", "lib/**/*.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/mdx.js", "lib/remark-img-to-jsx.js", "lib/**/*.d.ts", "utils/files.js"],
   "exclude": ["node_modules"]
 }
