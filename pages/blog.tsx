@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { getAllFilesFrontMatterNested } from '../lib/mdx'
+import { getAllFilesFrontMatter } from '../lib/mdx'
 import PostCard from '../components/Posts/PostCard'
 
 export default function Blog({ posts }: { posts: FrontMatter[] }) {
@@ -23,7 +23,7 @@ export default function Blog({ posts }: { posts: FrontMatter[] }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatterNested('blog')
+  const posts = await getAllFilesFrontMatter('blog')
 
   return { props: { posts } }
 }

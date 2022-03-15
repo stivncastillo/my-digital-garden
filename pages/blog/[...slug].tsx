@@ -1,9 +1,4 @@
-import {
-  getFiles,
-  getFileBySlug,
-  getFilesNested,
-  formatSlugNested,
-} from '../../lib/mdx'
+import { getFileBySlug, getFiles, formatSlug } from '../../lib/mdx'
 import BlogLayout from '../../layout/blog'
 import { MDXComponents } from '../../components/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
@@ -32,12 +27,12 @@ export default function Blog({ mdxSource, frontMatter }: Props) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFilesNested('blog')
+  const posts = await getFiles('blog')
 
   return {
     paths: posts.map((p: string) => ({
       params: {
-        slug: formatSlugNested(p).split('/'),
+        slug: formatSlug(p).split('/'),
       },
     })),
     fallback: false,
