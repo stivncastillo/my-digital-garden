@@ -24,7 +24,6 @@ export default function Blog({ posts }: { posts: FrontMatter[] }) {
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
-  console.log('🚀 ~ file: blog.tsx ~ line 27 ~ getStaticProps ~ posts', posts)
 
   return { props: { posts } }
 }

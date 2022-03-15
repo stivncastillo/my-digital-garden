@@ -1,4 +1,4 @@
-import { getFiles, getFileBySlug } from '../../lib/mdx'
+import { getFileBySlug, getFiles, formatSlug } from '../../lib/mdx'
 import BlogLayout from '../../layout/blog'
 import { MDXComponents } from '../../components/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
@@ -30,9 +30,9 @@ export async function getStaticPaths() {
   const posts = await getFiles('blog')
 
   return {
-    paths: posts.map((p) => ({
+    paths: posts.map((p: string) => ({
       params: {
-        slug: p.replace(/\.mdx/, ''),
+        slug: formatSlug(p).split('/'),
       },
     })),
     fallback: false,
@@ -40,11 +40,11 @@ export async function getStaticPaths() {
 }
 
 type ParamsType = {
-  slug: string
+  slug: [string]
 }
 
 export async function getStaticProps({ params }: { params: ParamsType }) {
-  const post = await getFileBySlug('blog', params.slug)
+  const post = await getFileBySlug('blog', params.slug.join('/'))
 
   return { props: post }
 }

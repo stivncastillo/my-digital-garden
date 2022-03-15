@@ -6,7 +6,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const Container: React.VFC<Props> = ({ children, ...rest }) => {
   return (
-    <div className="container m-auto" {...rest}>
+    <div className="flex flex-col m-auto h-screen" {...rest}>
       {children}
     </div>
   )
