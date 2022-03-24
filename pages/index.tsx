@@ -1,18 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import {
-  IoLogoTwitter,
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoLogoDribbble,
-  IoIosMail,
-} from 'react-icons/io'
+
 import { FaLaptopCode } from 'react-icons/fa'
 import { ImPencil } from 'react-icons/im'
 import Image from 'next/image'
 import PostCard from '../components/Posts/PostCard'
 import { getAllFilesFrontMatter } from '../lib/mdx'
 import Link from 'next/link'
+import SocialList from '../components/Social/SocialList'
 
 const myLoader = ({ src }: { src: string }) => {
   return `${src}`
@@ -69,67 +64,7 @@ const Home: NextPage<Props> = ({ posts }) => {
       </figure>
 
       {/* Social */}
-      <section className="flex flex-col flex-1 space-y-1 mb-8">
-        <span className="text-slate-400 dark:text-slate-500 text-xs">
-          Get in touch / Follow
-        </span>
-        <ul className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-4">
-          <li>
-            <a
-              href="https://twitter.com/stivncastillo_"
-              target="_blank"
-              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-              rel="noreferrer"
-            >
-              <IoLogoTwitter size={19} />
-              <span>Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/stivncastillo"
-              target="_blank"
-              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-              rel="noreferrer"
-            >
-              <IoLogoGithub size={19} />
-              <span>Github</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="linkedin.com/in/stivncastillo/"
-              target="_blank"
-              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-            >
-              <IoLogoLinkedin size={19} />
-              <span>Linkedin</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://dribbble.com/stivncastillo"
-              target="_blank"
-              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-              rel="noreferrer"
-            >
-              <IoLogoDribbble size={19} />
-              <span>Dribbble</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:stivencastillo.90@gmail.com"
-              target="_blank"
-              className="text-slate-500 dark:dark:text-slate-300 hover:text-slate-700 dark:hover:text-slate-500 font-bold flex flex-row items-center space-x-1"
-              rel="noreferrer"
-            >
-              <IoIosMail size={19} />
-              <span>E-mail</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+      <SocialList />
 
       {/* Latest post */}
       <section className="flex flex-col flex-1 space-y-1 mb-8">

@@ -41,14 +41,15 @@ const Navbar: React.VFC = () => {
           </li>
         </ul>
       </nav>
-
-      <button
-        type="button"
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        className="text-2xl dark:text-slate-50"
-      >
-        {theme === 'dark' ? <IoIosSunny /> : <IoIosMoon />}
-      </button>
+      {theme && (
+        <button
+          type="button"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          className="text-2xl dark:text-slate-50"
+        >
+          {theme === 'dark' ? <IoIosSunny /> : <IoIosMoon />}
+        </button>
+      )}
     </div>
   )
 }
