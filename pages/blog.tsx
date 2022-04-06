@@ -14,6 +14,7 @@ export default function Blog({ posts }: { posts: FrontMatter[] }) {
       <Head>
         <title>Stiven Castillo | Blog</title>
       </Head>
+      <h1 className="text-3xl mb-6">Blog</h1>
       {!filteredBlogPosts.length && <p>No posts found :(</p>}
       {filteredBlogPosts.map((frontMatter: FrontMatter) => (
         <PostCard key={frontMatter.slug} data={frontMatter} slim />

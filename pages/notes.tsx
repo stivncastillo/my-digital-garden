@@ -16,8 +16,10 @@ const Notes = ({ notes }: { notes: FrontMatter[] }) => {
   return (
     <>
       <Head>
-        <title>Stiven Castillo | Blog</title>
+        <title>Stiven Castillo | Notes</title>
       </Head>
+
+      <h1 className="text-3xl mb-6">Notes</h1>
 
       {Object.keys(finalNotes).map((category: string, index: number) => {
         const notes = finalNotes[category]

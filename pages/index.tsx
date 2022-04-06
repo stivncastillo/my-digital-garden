@@ -8,10 +8,7 @@ import PostCard from '../components/Posts/PostCard'
 import { getAllFilesFrontMatter } from '../lib/mdx'
 import Link from 'next/link'
 import SocialList from '../components/Social/SocialList'
-
-const myLoader = ({ src }: { src: string }) => {
-  return `${src}`
-}
+import { myLoader } from '../lib/loader'
 
 interface Props {
   posts: FrontMatter[]
@@ -42,14 +39,13 @@ const Home: NextPage<Props> = ({ posts }) => {
 
           <p className="text-slate-500 dark:text-slate-300 font-thin text-xl">
             Frontend developer at Elenas. Begginer writer, speaker, UI Designer
-            and Tatoo entusiast, based in Armenia, Colombia.
+            and Tattoo entusiast, based in Armenia, Colombia.
           </p>
-          <a
-            href="#"
-            className="text-sm underline text-indigo-500 dark:text-amber-400"
-          >
-            More in about page
-          </a>
+          <Link href={'/about'}>
+            <a className="text-sm underline text-indigo-500 dark:text-amber-400">
+              More in about page
+            </a>
+          </Link>
         </div>
         <div className="w-24 md:w-36">
           <Image
@@ -144,12 +140,11 @@ const Home: NextPage<Props> = ({ posts }) => {
               </div>
             </div>
 
-            <a
-              href="#"
-              className="block py-2 px-4 bg-indigo-500 dark:bg-amber-500 text-white text-center text-sm font-bold rounded-md"
-            >
-              What I&apos;m reading
-            </a>
+            <Link href="/books">
+              <a className="block py-2 px-4 bg-indigo-500 dark:bg-amber-500 text-white text-center text-sm font-bold rounded-md">
+                What I&apos;m reading
+              </a>
+            </Link>
           </div>
           <a href="">
             <div className="flex flex-col justify-end bg-yellow-100 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-yellow-300/50">
