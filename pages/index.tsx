@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import { FaLaptopCode } from 'react-icons/fa'
 import { ImPencil } from 'react-icons/im'
+import { FaBoxOpen } from 'react-icons/fa'
 import Image from 'next/image'
 import PostCard from '../components/Posts/PostCard'
 import { getAllFilesFrontMatter } from '../lib/mdx'
@@ -49,7 +50,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         </div>
         <div className="w-24 md:w-36">
           <Image
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=800&q=60"
+            src="/assets/images/profile-pic.png"
             alt="Profile"
             height={800}
             width={800}
@@ -87,36 +88,40 @@ const Home: NextPage<Props> = ({ posts }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 gap-6 px-2 md:px-4">
-          <a href="#">
-            <div className="flex flex-col justify-end bg-slate-800 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-slate-500/50">
-              <div className="">
-                <div className="flex flex-row items-center text-white space-x-2 mb-2">
-                  <FaLaptopCode size={24} />
-                  <h4 className="text-xl font-bold">Development</h4>
+          <Link href="/notes?category=Code">
+            <a>
+              <div className="flex flex-col justify-end bg-slate-800 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-slate-500/50">
+                <div className="">
+                  <div className="flex flex-row items-center text-white space-x-2 mb-2">
+                    <FaLaptopCode size={24} />
+                    <h4 className="text-xl font-bold mb-0">Code</h4>
+                  </div>
+
+                  <p className="text-slate-400">
+                    Useful snnipets, tricks and techniques for web/mobile
+                    development
+                  </p>
                 </div>
-
-                <p className="text-slate-400">
-                  Useful snnipets, tricks and techniques for web/mobile
-                  development
-                </p>
               </div>
-            </div>
-          </a>
+            </a>
+          </Link>
 
-          <a href="">
-            <div className="flex flex-col justify-end bg-green-200 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-green-300/50">
-              <div className="">
-                <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
-                  <ImPencil size={20} />
-                  <h4 className="text-xl font-bold">UI Design</h4>
+          <Link href="/notes?category=Design">
+            <a>
+              <div className="flex flex-col justify-end bg-green-200 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-green-300/50">
+                <div className="">
+                  <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
+                    <ImPencil size={20} />
+                    <h4 className="text-xl font-bold mb-0">UI Design</h4>
+                  </div>
+
+                  <p className="text-green-600">
+                    Patterns, design systems, bookmarks, related posts... etc.
+                  </p>
                 </div>
-
-                <p className="text-green-600">
-                  Patterns, design systems, bookmarks, related posts... etc.
-                </p>
               </div>
-            </div>
-          </a>
+            </a>
+          </Link>
 
           <div className="bg-slate-100 dark:bg-slate-600 rounded-xl m-h-56 p-4 flex flex-col space-y-4 justify-between">
             <div className="flex flex-row items-end space-x-4">
@@ -150,12 +155,13 @@ const Home: NextPage<Props> = ({ posts }) => {
             <div className="flex flex-col justify-end bg-yellow-100 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-yellow-300/50">
               <div className="">
                 <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
-                  <ImPencil size={20} />
-                  <h4 className="text-xl font-bold">UI Design</h4>
+                  <FaBoxOpen size={20} />
+                  <h4 className="text-xl font-bold mb-0">Misc</h4>
                 </div>
 
                 <p className="text-yellow-600">
-                  Patterns, design systems, bookmarks, related posts... etc.
+                  Tools, apps, libraries, frameworks, setup, quotes, web
+                  communities, etc.
                 </p>
               </div>
             </div>

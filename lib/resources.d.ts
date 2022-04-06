@@ -7,7 +7,7 @@ type FrontMatter = {
   publishedAt: string
   image: string
   pinned: boolean
-  categoires: string
+  category: string
 }
 type FrontMatterNotes = {
   wordCount: number
