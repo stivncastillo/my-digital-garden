@@ -10,13 +10,27 @@ interface Props {
 }
 
 const components = { ...MDXComponents }
+const URL = process.env.NEXT_PUBLIC_DOMAIN
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
-  const { title } = frontMatter
+  const { title, summary, image, slug } = frontMatter
   return (
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={summary} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`Stiven Castillo | ${title}`} />
+        <meta name="twitter:description" content={summary} />
+        {image && <meta name="twitter:image" content={`${URL}${image}`} />}
+
+        {/* Facebook */}
+        <meta property="og:title" content={`Stiven Castillo | ${title}`} />
+        <meta property="og:description" content={summary} />
+        {image && <meta name="og:image" content={`${URL}${image}`} />}
+        <meta property="og:url" content={`${URL}/notes/${slug}`} />
       </Head>
 
       <BlogLayout frontMatter={frontMatter}>

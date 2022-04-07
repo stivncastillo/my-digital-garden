@@ -1,6 +1,6 @@
 import { getAllFilesFrontMatter } from '../lib/mdx'
 
-const EXTERNAL_DATA_URL = process.env.DOMAIN
+const EXTERNAL_DATA_URL = process.env.NEXT_PUBLIC_DOMAIN
 
 function generateSiteMap({
   posts,
