@@ -54,7 +54,6 @@ const Home: NextPage<Props> = ({ posts }) => {
             alt="Profile"
             height={800}
             width={800}
-            loader={myLoader}
             className="rounded-full"
           />
         </div>

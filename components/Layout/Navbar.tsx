@@ -8,7 +8,7 @@ const Navbar: React.VFC = () => {
   return (
     <div className="flex flex-row items-center p-2 md:px-8 w-full max-w-4xl mx-auto">
       <Link href="/">
-        <a className="flex items-center">
+        <a className="flex items-center" aria-label="Home">
           <span className="bg-indigo-500 rounded-full w-8 h-8 block mr-8"></span>
         </a>
       </Link>
@@ -33,6 +33,7 @@ const Navbar: React.VFC = () => {
             <a
               href="#"
               title="Coming soon"
+              aria-disabled="true"
               // className="text-slate-900 dark:text-slate-50 hover:text-purple-500 dark:hover:text-purple-500"
               className="text-slate-400 dark:text-slate-500 "
             >
@@ -44,6 +45,7 @@ const Navbar: React.VFC = () => {
       {theme && (
         <button
           type="button"
+          aria-label="dark mode toggle"
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           className="text-2xl dark:text-slate-50"
         >

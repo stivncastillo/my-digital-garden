@@ -1,4 +1,7 @@
 module.exports = {
+  global: {
+    JSX: true,
+  },
   env: {
     browser: true,
     es2021: true,
@@ -18,8 +21,5 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': 'warn',
-  },
-  global: {
-    JSX: true,
   },
 }
