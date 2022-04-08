@@ -32,7 +32,7 @@ export default function Blog({ mdxSource, frontMatter }: Props) {
         {/* Facebook */}
         <meta property="og:title" content={`${author} | ${title}`} />
         <meta property="og:description" content={summary} />
-        {image && <meta name="og:image" content={`${URL}${image}`} />}
+        {image && <meta property="og:image" content={`${URL}${image}`} />}
         <meta property="og:url" content={`${URL}/blog/${slug}`} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={publishedAt} />

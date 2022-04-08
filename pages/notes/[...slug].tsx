@@ -13,7 +13,8 @@ const components = { ...MDXComponents }
 const URL = process.env.NEXT_PUBLIC_DOMAIN
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
-  const { title, summary, image, slug } = frontMatter
+  const { title, summary, image, slug, publishedAt, updatedAt, author } =
+    frontMatter
   return (
     <>
       <Head>
@@ -29,8 +30,13 @@ export default function Blog({ mdxSource, frontMatter }: Props) {
         {/* Facebook */}
         <meta property="og:title" content={`Stiven Castillo | ${title}`} />
         <meta property="og:description" content={summary} />
-        {image && <meta name="og:image" content={`${URL}${image}`} />}
+        {image && <meta property="og:image" content={`${URL}${image}`} />}
         <meta property="og:url" content={`${URL}/notes/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={publishedAt} />
+        <meta property="article:modified_time" content={updatedAt} />
+        <meta property="article:author" content={author} />
+        <meta property="og:locale" content="es-ES" />
       </Head>
 
       <BlogLayout frontMatter={frontMatter}>
