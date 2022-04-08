@@ -44,7 +44,7 @@ const Home: NextPage<Props> = ({ posts }) => {
           </p>
           <Link href={'/about'}>
             <a className="text-sm underline text-indigo-500 dark:text-amber-400">
-              More in about page
+              Acerca de mi
             </a>
           </Link>
         </div>
