@@ -1,0 +1,63 @@
+---
+title: '¿Cómo construí mi digital garden?'
+publishedAt: '2022-04-01'
+updatedAt: '2022-04-01'
+author: 'Stiven Castillo'
+summary: 'Las tecnologías que usé para construir mi digital garden de una manera rápida y sencilla.'
+image: "/assets/images/blog/nextjs.jpg"
+pinned: false
+---
+
+##### TL;DR
+
+Cuando quice empezar a crear mi [jardín digital](/blog/what-is-digital-gardens) tenía muchas dudas de cómo construirlo, al principio
+quice usar algunos boilerplates que encontré en github, pero no quería casarme con una estructura a la que no estaba acostumbrado,
+estaba convencido de que quería hacer algo que escalara junto a mis ideas (no saben cuantas veces he creado proyectos para mi web personal 😅).
+Aprovechando que estaba viendo el curso de [Nextjs en Platzi](https://platzi.com/cursos/next/) y que en la empresa en la que trabajo
+estabamos próximos a empezar un proyecto en la misma tecnología, lo hice.
+
+### Stack
+
+#### Nextjs
+
+La definición oficial de Nextjs en su web es: _"Next.js is a React framework that gives you building blocks to create web applications."_
+Por framework se refiere a que Nextjs se encarga de las herramientas y configuración para hacer aplicaciones web en React, nos
+proporciona una estructura, caracteristicas y muchas optimizaciones adicionales para el performance de tu aplicación.
+
+Además de la razón que mecioné al principio, me decidí por Nextjs porque tiene muchas caracteristicas que requería este proyecto, React ❤️, SSR,
+Estructura definida, Rutas, Typescript, etc. Siempre empiezo con CRA (Create React App) pero siento que me demoro mucho configurando navegación,
+typescript, estructura de carpetas, webpack, eslint, deploy, SSR, etc. Primero morían las ideas antes de poder tener un lugar dónde publicar.
+
+#### MDX
+
+Para este proyecto quería dejar a un lado conexiones a APIs (Contentful, Firebase, etc.) que implicaban un poco más de esfuerzo y tiempo,
+Usar Markdown para crear los posts y las notas me parecía una idea genial, es sencillo y muy común en el mundo del desarrollo. [MDX](https://mdxjs.com) es Markdown con esteroides,
+me permite usar `JSX` y qué creen, si, puedo usar componentes de react dentro de mis archivos `.mdx`, una chimba! 🤘
+
+La integración con Nextjs no fue nada fácil, habría que construir un 'pre-proceso' que compilara los archivos mdx a páginas con Nextjs. Encontré un repositorio
+super interesante de dónde me copié 🙈 dicho pre-proceso: https://github.com/timlrx/tailwind-nextjs-starter-blog (boilerplate recomendado).
+
+Esta integración me ha gustado bastante, mis posts ya no están en una base de datos, es un archivo dentro de mi proyecto y me es muy fácil editarlo.
+Pero tiene una desventaja y es que, qué pasará cuando tenga muchos archivos? el proyecto se hará muy pesado 🤔.
+
+#### Tailwindcss
+
+En materia de look-and-feel me gusta mucho trabajar con [Tailwindcss](tailwindcss.com/), su filosofía de estilos atómicos me dan gran agilidad al momento de contruir componentes,
+no tengo que tener un archivo aparte mientras estoy diseñando, tiene una paleta de colores muy cool 😎 y algo muy importante: reduce el tamaño del bundle en producción
+purgando los estilos que no estoy usando.
+
+Tailwind también me ofrece una manera muy sencilla de personalizar el Tema, usar dark-mode y las utilidades de responsice son exquisitas.
+
+#### A futuro
+
+Como comentaba en mi post anterior tengo pensado hacer un Playground dónde pueda experimentar con diferentes tecnologías en materia de Front-end. Para ello
+me gustaría abordar un tema que he estudiado bastante pero no he aplicado profesionalmente, los Micro-frontends.
+
+Los Micro-frontends me ofrecen la oportunidad de usar multiples tecnologías como Angular, Vue, Ember y obviamente Javascript puro y duro. Con esto
+me puedo permitir hacer diferentes experimentos en otras librerías en las que no he trabajado. Estaré muy pronto comentando acerca de Micro-frontends y de
+cómo voy abordando mi Playground.
+
+###### Nota
+
+Como es de esperarse en un Digital Garden, este post irá evolucionando con el tiempo y con este proyecto, iré probando, reemplazando y manteniendo diferentes técnologias. Obviamente estaré
+compartiendo toda la experiencia y notas. 💪🏻

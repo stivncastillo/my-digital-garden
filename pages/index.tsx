@@ -75,9 +75,12 @@ const Home: NextPage<Props> = ({ posts }) => {
 
         <div className="flex flex-col">
           {pinnedPosts && <PostCard data={pinnedPosts} pinned />}
-          {filteredBlogPosts.slice(0, 2).map((frontMatter: FrontMatter) => (
-            <PostCard key={frontMatter.slug} data={frontMatter} />
-          ))}
+          {filteredBlogPosts
+            .filter((post) => post.slug !== pinnedPosts?.slug)
+            .slice(0, 2)
+            .map((frontMatter: FrontMatter) => (
+              <PostCard key={frontMatter.slug} data={frontMatter} />
+            ))}
         </div>
       </section>
 

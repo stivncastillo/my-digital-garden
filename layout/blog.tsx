@@ -19,7 +19,7 @@ const BlogLayout = ({ children, frontMatter }: Props) => {
         </p>
         <div className="flex flex-row justify-between items-end">
           <span className="text-sm text-slate-400">Stiven Castillo</span>
-          <div className="flex flex-row items-end space-x-2">
+          <div className="flex flex-row items-center space-x-2">
             <span className="dark:text-slate-500 text-slate-400 text-xs">
               {readingTime.text}
             </span>

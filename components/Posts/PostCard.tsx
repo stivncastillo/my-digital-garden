@@ -62,6 +62,7 @@ const PostCard = ({ pinned, slim, data }: Props) => {
               alt="Tree"
               width={96}
               height={96}
+              layout="responsive"
               className="aspect-square object-cover rounded-md"
             />
           </div>
