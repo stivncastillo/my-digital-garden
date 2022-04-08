@@ -117,7 +117,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                     <h4 className="text-xl font-bold mb-0">UI Design</h4>
                   </div>
 
-                  <p className="text-green-600">
+                  <p className="text-green-600 dark:text-green-600">
                     Patterns, design systems, bookmarks, related posts... etc.
                   </p>
                 </div>
@@ -161,7 +161,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                   <h4 className="text-xl font-bold mb-0">Misc</h4>
                 </div>
 
-                <p className="text-yellow-600">
+                <p className="text-yellow-600 dark:text-yellow-600">
                   Tools, apps, libraries, frameworks, setup, quotes, web
                   communities, etc.
                 </p>
