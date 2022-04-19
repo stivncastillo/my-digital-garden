@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="es-ES" prefix="og: https://ogp.me/ns#">
+      <Html prefix="og: https://ogp.me/ns#">
         <Head>
           <meta
             name="viewport"

@@ -31,14 +31,25 @@ const Notes = ({ notes }: { notes: FrontMatter[] }) => {
         <title>Stiven Castillo | Notes</title>
       </Head>
 
-      <h1 className="text-3xl mb-6">Notes</h1>
+      <h1 className="text-3xl mb-2">Notes</h1>
+      <p className="text-slate-500 dark:text-slate-300 font-thin text-xl mb-4">
+        Bienvenidos a mis notas, recortes y bookmarks que adornan mi Digital
+        Garden. Este espacio lo uso para anotar y compartir cosas que me ayudan
+        en mi día a día como desarrollador.
+      </p>
+      <p className="text-sm text-slate-400 dark:text-slate-500">
+        Disfutenlo y cuidado me pisa el césped!
+      </p>
+
       {!Object.keys(finalNotes).length && (
-        <p>
-          Notes not found.{' '}
+        <div className="bg-indigo-100 text-indigo-500 py-2 px-4 rounded-md text-center">
+          {query.category
+            ? `Aún no tengo notas de ${query.category}, sorry 🙈`
+            : 'Aún no tengo notas de este tema, sorry 🙈.'}{' '}
           <Link href="/">
-            <a className="text-indigo-500 dark:text-yellow-500">Go to Home</a>
+            <a className="text-indigo-500  underline">Ir al Inicio</a>
           </Link>
-        </p>
+        </div>
       )}
 
       {finalNotes &&

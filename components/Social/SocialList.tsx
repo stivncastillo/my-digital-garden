@@ -40,7 +40,7 @@ const SocialList = () => {
   return (
     <section className="flex flex-col flex-1 space-y-1 mb-8">
       <span className="text-slate-400 dark:text-slate-500 text-xs">
-        Get in touch / Follow
+        Contacto / Sígueme
       </span>
       <ul className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-4">
         {SOCIAL_ITEMS.map(({ name, url, icon }) => (

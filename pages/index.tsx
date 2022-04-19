@@ -39,13 +39,15 @@ const Home: NextPage<Props> = ({ posts }) => {
           <h1 className="text-4xl dark:text-white">Stiven Castillo</h1>
 
           <p className="text-slate-500 dark:text-slate-300 font-thin text-xl">
-            Frontend developer at Elenas. Begginer writer, speaker, UI Designer
-            and Tattoo entusiast, based in Armenia, Colombia.
+            Frontend developer at{' '}
+            <a className="link" target="_blank" href="https://elenas.co/co/">
+              Elenas
+            </a>
+            . Begginer writer, speaker, UI Designer and Tattoo entusiast, based
+            in Armenia, Colombia.
           </p>
           <Link href={'/about'}>
-            <a className="text-sm underline text-indigo-500 dark:text-amber-400">
-              Acerca de mi
-            </a>
+            <a className="link text-sm">Acerca de mi</a>
           </Link>
         </div>
         <div className="w-24 md:w-36">
@@ -65,10 +67,12 @@ const Home: NextPage<Props> = ({ posts }) => {
       {/* Latest post */}
       <section className="flex flex-col flex-1 space-y-1 mb-8">
         <div className="flex flex-row justify-between items-center mb-4">
-          <h2 className="text-3xl font-bold dark:text-slate-50">Latest post</h2>
+          <h2 className="text-3xl font-bold dark:text-slate-50">
+            Últimos posts
+          </h2>
           <Link href="/blog">
             <a className="text-sm underline text-indigo-500 dark:text-amber-400">
-              show more
+              ver más
             </a>
           </Link>
         </div>
@@ -86,7 +90,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
       <section>
         <div className="flex flex-row justify-between items-center mb-4">
-          <h2 className="text-3xl font-bold dark:text-slate-100">Featured</h2>
+          <h2 className="text-3xl font-bold dark:text-slate-100">Destacado</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 gap-6 px-2 md:px-4">
@@ -96,12 +100,11 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <div className="">
                   <div className="flex flex-row items-center text-white space-x-2 mb-2">
                     <FaLaptopCode size={24} />
-                    <h4 className="text-xl font-bold mb-0">Code</h4>
+                    <h4 className="text-xl font-bold m-0">Code</h4>
                   </div>
 
                   <p className="text-slate-400">
-                    Useful snnipets, tricks and techniques for web/mobile
-                    development
+                    Snnipets, notas y tricks útiles para el desarrollo web/móvil
                   </p>
                 </div>
               </div>
@@ -114,11 +117,12 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <div className="">
                   <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
                     <ImPencil size={20} />
-                    <h4 className="text-xl font-bold mb-0">UI Design</h4>
+                    <h4 className="text-xl font-bold m-0">UI Design</h4>
                   </div>
 
                   <p className="text-green-600 dark:text-green-600">
-                    Patterns, design systems, bookmarks, related posts... etc.
+                    Patrones de diseño, design systems, bookmarks, posts
+                    relacionados, etc.
                   </p>
                 </div>
               </div>
@@ -136,7 +140,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               />
               <div className="">
                 <span className="text-slate-400 dark:text-slate-200 font-thin text-sm">
-                  recently read
+                  leído recientemente
                 </span>
                 <h4 className="text-xl font-bold text-slate-700 dark:text-white">
                   A Short History of Nearly Everything
@@ -149,25 +153,27 @@ const Home: NextPage<Props> = ({ posts }) => {
 
             <Link href="/books">
               <a className="block py-2 px-4 bg-indigo-500 dark:bg-amber-500 text-white text-center text-sm font-bold rounded-md">
-                What I&apos;m reading
+                ¿Qué estoy leyendo?
               </a>
             </Link>
           </div>
-          <a href="">
-            <div className="flex flex-col justify-end bg-yellow-100 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-yellow-300/50">
-              <div className="">
-                <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
-                  <FaBoxOpen size={20} />
-                  <h4 className="text-xl font-bold mb-0">Misc</h4>
-                </div>
+          <Link href="/notes?category=Misc">
+            <a>
+              <div className="flex flex-col justify-end bg-yellow-100 rounded-xl h-56 p-4 hover:shadow-lg hover:shadow-yellow-300/50">
+                <div className="">
+                  <div className="flex flex-row items-center text-slate-900 space-x-2 mb-2">
+                    <FaBoxOpen size={20} />
+                    <h4 className="text-xl font-bold m-0">Misc</h4>
+                  </div>
 
-                <p className="text-yellow-600 dark:text-yellow-600">
-                  Tools, apps, libraries, frameworks, setup, quotes, web
-                  communities, etc.
-                </p>
+                  <p className="text-yellow-600 dark:text-yellow-600">
+                    Herramientas, apps, librerías, frameworks, setups,
+                    comunidades web, etc.
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </Link>
         </div>
       </section>
     </>

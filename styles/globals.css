@@ -64,6 +64,9 @@
 }
 
 @layer components {
+  .link {
+    @apply underline text-indigo-500 dark:text-amber-400;
+  }
 }
 
 @import "./vendor/prims.css";

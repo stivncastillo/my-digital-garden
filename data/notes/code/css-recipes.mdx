@@ -1,0 +1,26 @@
+---
+title: 'CSS Recipes'
+publishedAt: '2022-04-05'
+summary: 'Técnicas y fragmentos utiles de CSS para la web.'
+pinned: true
+category: 'Code'
+---
+### Container Query
+
+Es la habilidad de un elemento de renderizarce en diferentes formas según el tamaño de su contenedor padre.
+
+```css
+.sidebar {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+```
+```css
+@container sidebar (min-width: 400px){
+  .card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+```
+Ver más en la referencia https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries

@@ -3,11 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import SocialList from '../components/Social/SocialList'
-import { myLoader } from '../lib/loader'
 
-type Props = {}
-
-const About = (props: Props) => {
+const About = () => {
   return (
     <>
       <Head>
@@ -57,11 +54,10 @@ const About = (props: Props) => {
         </div>
         <div className="w-24">
           <Image
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=800&q=60"
+            src="/assets/images/profile-pic.png"
             alt="Profile"
             height={800}
             width={800}
-            loader={myLoader}
             className="rounded-full"
           />
         </div>
