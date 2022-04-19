@@ -25,6 +25,7 @@ export default function Blog({ mdxSource, frontMatter }: Props) {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@stivncastillo_" />
         <meta name="twitter:title" content={`${author} | ${title}`} />
         <meta name="twitter:description" content={summary} />
         {image && <meta name="twitter:image" content={`${URL}${image}`} />}

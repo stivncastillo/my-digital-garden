@@ -7,6 +7,7 @@ import { MdFolderOpen } from 'react-icons/md'
 import { groupBy } from '../utils/notes'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Alert from '../components/Common/Alert'
 
 const Notes = ({ notes }: { notes: FrontMatter[] }) => {
   const { query } = useRouter()
@@ -42,14 +43,14 @@ const Notes = ({ notes }: { notes: FrontMatter[] }) => {
       </p>
 
       {!Object.keys(finalNotes).length && (
-        <div className="bg-indigo-100 text-indigo-500 py-2 px-4 rounded-md text-center">
+        <Alert>
           {query.category
             ? `Aún no tengo notas de ${query.category}, sorry 🙈`
             : 'Aún no tengo notas de este tema, sorry 🙈.'}{' '}
           <Link href="/">
             <a className="text-indigo-500  underline">Ir al Inicio</a>
           </Link>
-        </div>
+        </Alert>
       )}
 
       {finalNotes &&
