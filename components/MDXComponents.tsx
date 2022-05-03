@@ -1,8 +1,10 @@
 import { ClassAttributes, HTMLAttributes } from 'react'
 import CustomLink from './Common/CustomAnchor'
 import Divider from './Common/Divider'
+import Toc from './Toc/Toc'
 
 export const MDXComponents = {
+  TOCInline: Toc,
   ul: (
     props: JSX.IntrinsicAttributes &
       ClassAttributes<HTMLUListElement> &

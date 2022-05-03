@@ -14,7 +14,7 @@ const components = { ...MDXComponents }
 const URL = process.env.NEXT_PUBLIC_DOMAIN
 
 export default function Blog({ mdxSource, frontMatter }: Props) {
-  const { title, summary, image, slug, publishedAt, updatedAt, author } =
+  const { title, summary, image, slug, publishedAt, updatedAt, author, toc } =
     frontMatter
   return (
     <>
@@ -43,7 +43,13 @@ export default function Blog({ mdxSource, frontMatter }: Props) {
       </Head>
 
       <BlogLayout frontMatter={frontMatter}>
-        <MDXRemote {...mdxSource} components={components} />
+        <MDXRemote
+          {...mdxSource}
+          components={components}
+          scope={{
+            toc,
+          }}
+        />
       </BlogLayout>
     </>
   )

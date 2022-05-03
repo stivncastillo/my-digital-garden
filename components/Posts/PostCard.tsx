@@ -45,7 +45,9 @@ const PostCard = ({ pinned, slim, data }: Props) => {
           </div>
 
           <div className="flex-1">
-            <h3 className="text-2xl font-bold dark:text-slate-100">{title}</h3>
+            <h3 className="text-2xl mb-2 mt-0 font-bold dark:text-slate-100">
+              {title}
+            </h3>
             <p
               className={`text-slate-500 font-thin dark:text-slate-400 ${
                 slim ? 'text-sm' : 'text-md'

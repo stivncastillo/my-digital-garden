@@ -1,3 +1,9 @@
+type TocType = {
+  value: string;
+  url: string;
+  depth: number;
+}
+
 type FrontMatter = {
   wordCount: number
   readingTime: ReadTimeResults
@@ -10,6 +16,7 @@ type FrontMatter = {
   pinned: boolean
   category: string
   author: string
+  toc: TocType[]
 }
 type FrontMatterNotes = {
   wordCount: number

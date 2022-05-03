@@ -6,6 +6,10 @@ image: "/assets/images/tree.jpg"
 pinned: true
 category: 'Code'
 ---
+
+<TOCInline toc={toc} fromHeading={3} toHeading={4} indentDepth={4} />
+
+
 ### useTimeout
 
 ```js
@@ -46,3 +50,36 @@ function App() {
 }
 
 ```
+### Usar useRef en lugar de useState
+
+Para evitar re-renders en el componente es una buena alternativa usar *useRef* cómo en
+este ejemplo creando un componente input:
+
+```tsx
+const CustomInput: React.FC = () => {
+  const [text, setText] = useState<string>()
+
+  return (
+    <input
+      value={text}
+      onChange={e => setValue(e.target.value)}
+      type={text}
+    />
+  )
+}
+```
+
+En este ejemplo, cada pulsación de tecla se volverá a renderizar debido al cambio de estado con el evento onChange.
+
+```tsx
+const CustomInput: React.FC = () => {
+  const inputElementRef = useRef(null);
+  console.log(inputElementRef?.current?.value);
+
+  return (
+    <input ref={inputElementRef} type="text" />
+  );
+}
+```
+
+En este ejemplo, lo que se escribe en la entrada se puede leer usando la referencia de entrada. Este enfoque evita la re-renderización innece saria en cada pulsación de tecla.
