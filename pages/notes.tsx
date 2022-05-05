@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Head from 'next/head'
 
 import { getAllFilesFrontMatter } from '../lib/mdx'
@@ -63,7 +63,7 @@ const Notes = ({ notes }: { notes: FrontMatter[] }) => {
                 <div className="text-2xl">
                   <MdFolderOpen />
                 </div>
-                <h3 className="text-2xl mb-0">{category}</h3>
+                <h3 className="text-2xl mb-0 mt-0">{category}</h3>
               </div>
               {notes.map((frontMatter: FrontMatter, index) => (
                 <div key={`note-${index}`} className="flex flex-col px-4">

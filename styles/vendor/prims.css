@@ -20,6 +20,7 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  position: relative;
 }
 
 /* Selection */
@@ -465,4 +466,9 @@ pre {
   margin-left: -8px;
   color: rgb(156, 163, 175); /* Line number color */
   content: attr(line);
+}
+
+
+.remark-code-title {
+  @apply text-sm text-slate-400;
 }
