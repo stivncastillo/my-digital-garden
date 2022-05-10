@@ -13,7 +13,7 @@
     font-family: 'Merriweather Sans', 'Open Sans', sans-serif;
   }
   h2 {
-    @apply font-medium leading-tight mb-2 text-4xl;
+    @apply font-medium leading-tight mb-2 text-3xl;
     font-family: 'Merriweather Sans', 'Open Sans', sans-serif;
   }
   h3 {
