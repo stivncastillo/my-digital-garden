@@ -15,7 +15,7 @@ const NotesCard = ({ data }: Props) => {
     <Link href={`/notes/${slug}`}>
       <a className="flex flex-row justify-between items-center py-2 mb-2 w-full border-b border-dashed border-slate-200 dark:border-slate-700">
         <div>
-          <h5>{title}</h5>
+          <h4 className="mb-0 mt-0">{title}</h4>
           <p className="text-slate-400 dark:text-slate-500 font-thin">
             {summary}
           </p>
