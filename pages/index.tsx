@@ -52,7 +52,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         </div>
         <div className="w-24 md:w-36">
           <Image
-            src="/assets/images/profile-pic.png"
+            src="/assets/images/profile.jpg"
             alt="Profile"
             height={800}
             width={800}
