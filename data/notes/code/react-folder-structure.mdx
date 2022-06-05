@@ -1,13 +1,19 @@
 ---
 title: 'React - Estructura de carpetas'
 publishedAt: '2022-04-13'
-summary: 'En busca de la estructura perfecta...'
+summary: 'En busca de la manera correcta de ordenar mi aplicación en react'
 image: "/assets/images/notes/folders.jpg"
 category: 'Code'
 ---
 
-Voy a ir exponiendo las estructuras de carpetas que he usado a lo largo de mi
-trabajo como frontend dev tanto para Reactjs como para React Native.
+Como muy bien se describe en la página de react: ["React doesn’t have opinions"](https://reactjs.org/docs/faq-structure.html#is-there-a-recommended-way-to-structure-react-projects).
+No proponen una estructura ideal para organizar una aplicación en react.
+
+Voy a ir exponiendo y explorando diferentes estructuras de carpetas que me han ayudado o me pueden ayudar
+en un futuro a plantear una arquitectura sólida para el trabajo en equipo.
+
+<TOCInline toc={toc} fromHeading={2} toHeading={2} indentDepth={4} />
+
 
 ## React
 
@@ -118,3 +124,37 @@ la comodidad para empezar un proyecto rapidamente.
 El proyecto irá evolucionando junto con la arquitectura de carpetas, pero para comenzar
 esta estructura me funciona bastante bien.
 
+## Multi-package monorepo
+
+El objetivo general de esta arquitectura es brindar una organización a nivel de _features_ o _características_
+con el fin de descomponer el código en pequeñas 'aplicaciones' que pueden ser mantenidas
+por diferentes squads, permitiendo la independecia de cada uno de ellos.
+
+Aquí un ejemplo:
+
+```bash
+├── packages
+│   ├── core
+│   │   ├── button
+│   │   │   └── package.json
+│   │   ├── layout
+│   │   └── styles
+│   └── product
+│       ├── board
+│       ├── issue
+│       ├── sidebar
+│       │   ├── data
+│       │   ├── shared
+│       │   └── ui
+│       │       ├── development-section
+│       │       └── planning-section
+│       └── topbar
+│           ├── logo
+│           └── top-menu
+└── website
+    ├── pages
+    │   └── issue
+    └── public
+```
+
+Voy a escribir un post extenso hablando de esta arquitectura: Feature-Driven Development.
