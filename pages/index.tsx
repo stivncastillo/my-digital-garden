@@ -132,21 +132,21 @@ const Home: NextPage<Props> = ({ posts }) => {
           <div className="bg-slate-100 dark:bg-slate-600 rounded-xl m-h-56 p-4 flex flex-col space-y-4 justify-between">
             <div className="flex flex-row items-end space-x-4">
               <Image
-                src="/assets/images/book.jpg"
+                src="/assets/images/books/atomic.jpg"
                 alt="Book"
-                width={120}
-                height={202}
-                className="aspect-auto w-24 object-cover rounded-md"
+                width={100}
+                height={142}
+                className="aspect-auto object-cover rounded-md"
               />
               <div className="">
                 <span className="text-slate-400 dark:text-slate-200 font-thin text-sm">
                   leído recientemente
                 </span>
                 <h4 className="text-xl font-bold text-slate-700 dark:text-white">
-                  A Short History of Nearly Everything
+                  Atomic Habits
                 </h4>
                 <span className="text-slate-400 dark:text-slate-200 font-thin text-sm">
-                  by Bill Bryson
+                  by James Clear
                 </span>
               </div>
             </div>

@@ -8,17 +8,17 @@ export type BookType = {
 
 export const books: BookType[] = [
   {
-    title:"Atomic Habits",
-    author:"James Clear",
-    image:"/assets/images/books/atomic.jpg",
-    link: "https://www.goodreads.com/book/show/40121378-atomic-habits",
+    title:"El despertar del leviatán",
+    author:"James S.A. Corey",
+    image:"/assets/images/books/expanse1.jpg",
+    link: "https://www.goodreads.com/book/show/32023743-el-despertar-del-leviat-n",
     current: true
   },
   {
-    title:"La viajera del tiempo",
-    author:"Lorena Franco",
-    image:"/assets/images/books/viajera.jpg",
-    link: "https://www.goodreads.com/book/show/35415895-la-viajera-del-tiempo",
+    title:"Esbozos Filosóficos",
+    author:"Damián Pachón Soto",
+    image:"/assets/images/books/esbozos.jpg",
+    link: "https://www.iberlibro.com/servlet/BookDetailsPL?bi=30789360307",
     current: true
   },
   {
@@ -27,6 +27,18 @@ export const books: BookType[] = [
     image:"/assets/images/books/testing.jpg",
     link: "https://www.goodreads.com/book/show/58052469-simplify-testing-with-react-testing-library",
     current: true
+  },
+  {
+    title:"Atomic Habits",
+    author:"James Clear",
+    image:"/assets/images/books/atomic.jpg",
+    link: "https://www.goodreads.com/book/show/40121378-atomic-habits",
+  },
+  {
+    title:"La viajera del tiempo",
+    author:"Lorena Franco",
+    image:"/assets/images/books/viajera.jpg",
+    link: "https://www.goodreads.com/book/show/35415895-la-viajera-del-tiempo",
   },
   {
     title:"A Short History of Nearly Everything",
