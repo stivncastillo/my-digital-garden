@@ -2,11 +2,17 @@
   "name": "my-digital-garden",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/**",
+    "app/**"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint . --fix"
+    "app:dev": "cd app && yarn dev",
+    "app:build": "cd app && yarn build",
+    "app:start": "cd app && yarn start",
+    "lint": "yarn jest --config jest-eslint.config.js",
+    "lint:fix": "yarn run eslint --ext .ts,.tsx,.js . --fix",
+    "ts": "yarn run tsc --noEmit"
   },
   "dependencies": {
     "date-fns": "^2.28.0",
@@ -35,6 +41,7 @@
     "remark-toc": "^8.0.1"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.1",
     "@types/node": "17.0.21",
     "@types/react": "17.0.39",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
