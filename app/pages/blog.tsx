@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { getAllFilesFrontMatter } from '../lib/mdx'
 import PostCard from '../components/Posts/PostCard'
-import Alert from '../components/Common/Alert'
+import { Alert } from '@digitalgarden/core'
 
 export default function Blog({ posts }: { posts: FrontMatter[] }) {
   const filteredBlogPosts = posts.sort(

@@ -21,5 +21,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-unused-vars': 'warn',
+    'react/jsx-no-target-blank': 'off'
   },
 }

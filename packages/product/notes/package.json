@@ -1,0 +1,6 @@
+{
+  "name": "@digitalgarden/product-notes",
+  "version": "0.1.0",
+  "main": "./index.tsx",
+  "types": "./types.d.ts"
+}

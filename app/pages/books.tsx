@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import Book from '../components/Books/Book'
+import { Book } from '@digitalgarden/core'
 
 import { books, BookType } from '../data/data'
 

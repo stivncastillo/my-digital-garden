@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['tsx', 'ts'],
+  experimental: {
+    externalDir: true,
+  },
 //   i18n: {
 //    locales: ["es", "en-US"],
 //    defaultLocale: "es",
