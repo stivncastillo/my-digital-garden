@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import SocialList from '../components/Social/SocialList'
+import { SocialList } from '../features/Home/components'
 
 const About = () => {
   return (

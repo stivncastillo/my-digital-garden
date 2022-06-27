@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import Container from '../components/Layout/Container'
-import Navbar from '../components/Layout/Navbar'
+import Navbar from '../components/Layout/Nav/Navbar'
 import Footer from '../components/Layout/Footer'
 import { useRouter, Router } from 'next/router'
 
