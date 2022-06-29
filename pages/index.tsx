@@ -1,21 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { FaLaptopCode } from 'react-icons/fa'
-import { ImPencil } from 'react-icons/im'
-import { FaBoxOpen } from 'react-icons/fa'
-import Image from 'next/image'
-import PostCard from '../components/Posts/PostCard'
 import { getAllFilesFrontMatter } from '../lib/mdx'
-import Link from 'next/link'
-import { myLoader } from '../lib/loader'
-import { Hero, PostsSection, SocialList } from '../features/Home/components'
 import {
-  getHomePosts,
-  getPinnedPost,
-  sortPosts,
-} from '../features/Home/utils/postsUtils'
-import FeaturedSection from '../features/Home/components/FeaturedSection/FeaturedSection'
+  Hero,
+  PostsSection,
+  SocialList,
+  FeaturedSection,
+} from '../features/Home/components'
+import { getHomePosts, getPinnedPost } from '../features/Home/utils/postsUtils'
 
 interface Props {
   posts: FrontMatter[]
@@ -40,7 +33,6 @@ const Home: NextPage<Props> = ({ posts }) => {
       <Hero />
       <SocialList />
       <PostsSection posts={sortedPosts} pinnedPost={pinnedPost} />
-
       <FeaturedSection />
     </>
   )

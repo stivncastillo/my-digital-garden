@@ -4,24 +4,30 @@ import Head from 'next/head'
 import { getAllFilesFrontMatter } from '../lib/mdx'
 import PostCard from '../components/Posts/PostCard'
 import Alert from '../components/Common/Alert'
+import { sortPosts } from '../features/Home/utils/postsUtils'
+import Link from 'next/link'
 
 export default function Blog({ posts }: { posts: FrontMatter[] }) {
-  const filteredBlogPosts = posts.sort(
-    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-  )
+  const blogPosts = sortPosts(posts)
 
   return (
     <>
       <Head>
         <title>Stiven Castillo | Blog</title>
       </Head>
+
       <h1 className="text-3xl mb-6">Blog</h1>
-      {!filteredBlogPosts.length && (
+
+      {!blogPosts.length && (
         <Alert>
-          <p>No hay post, lo siento.</p>
+          Aún no tengo posts, sorry 🙈.
+          <Link href="/">
+            <a className="text-indigo-500  underline">Ir al Inicio</a>
+          </Link>
         </Alert>
       )}
-      {filteredBlogPosts.map((frontMatter: FrontMatter) => (
+
+      {blogPosts.map((frontMatter: FrontMatter) => (
         <PostCard key={frontMatter.slug} data={frontMatter} slim />
       ))}
     </>
