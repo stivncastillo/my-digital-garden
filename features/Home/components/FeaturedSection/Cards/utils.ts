@@ -11,13 +11,13 @@ export const getClassesByColor = (color?: ColorCard): ColorClassSchema => {
     case 'green':
       return {
         background: 'bg-green-200 hover:shadow-green-300/50',
-        title: 'text-slate-900',
+        title: 'text-green-900',
         body: 'text-green-600 dark:text-green-600',
       }
     case 'yellow':
       return {
         background: 'bg-yellow-100 hover:shadow-yellow-300/50',
-        title: 'text-slate-900',
+        title: 'text-yellow-900',
         body: 'text-yellow-600 dark:text-yellow-600',
       }
     default:

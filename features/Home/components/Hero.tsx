@@ -11,10 +11,10 @@ const Hero: React.VFC = () => {
         <p className="text-slate-500 dark:text-slate-300 font-thin text-xl">
           Frontend developer at{' '}
           <a className="link" target="_blank" href="https://elenas.co/co/">
-            Elenas
+            Evolve
           </a>
           . Begginer writer, speaker, UI Designer and Tattoo entusiast, based in
-          Armenia, Colombia.
+          Cali, Colombia.
         </p>
         <Link href="/about">
           <a className="link text-sm">Acerca de mi</a>
