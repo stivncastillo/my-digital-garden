@@ -1,32 +1,22 @@
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
+import { useTheme } from 'next-themes'
+import ThemeButton from '../../Common/Button/ThemeButton'
+import NavLink from './NavLink'
 
 const Nav: React.VFC = () => {
+  const { theme, setTheme } = useTheme()
+
+  const handleChangeTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
   return (
-    <ul className="flex space-x-4">
-      <li>
-        <Link href="/blog">
-          <a className="text-slate-900 dark:text-slate-50 hover:text-orange-400 dark:hover:text-orange-400">
-            Blog
-          </a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/notes">
-          <a className="text-slate-900 dark:text-slate-50 hover:text-green-500 dark:hover:text-green-500">
-            Notes
-          </a>
-        </Link>
-      </li>
-      <li>
-        <a
-          href="#"
-          title="Coming soon"
-          aria-disabled="true"
-          className="text-slate-400 dark:text-slate-500 "
-        >
-          Playground 🚧
-        </a>
+    <ul className="flex space-x-4 justify-end">
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/blog">Blog</NavLink>
+      <NavLink href="/notes">Notes</NavLink>
+      <li className="flex items-center">
+        {theme && <ThemeButton theme={theme} onClick={handleChangeTheme} />}
       </li>
     </ul>
   )

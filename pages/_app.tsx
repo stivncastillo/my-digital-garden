@@ -6,6 +6,7 @@ import Container from '../components/Layout/Container'
 import Navbar from '../components/Layout/Nav/Navbar'
 import Footer from '../components/Layout/Footer'
 import { useRouter, Router } from 'next/router'
+import Head from 'next/head'
 
 declare global {
   interface Window {
@@ -37,6 +38,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
   return (
     <ThemeProvider attribute="class">
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+      </Head>
       <Container>
         <Navbar />
 

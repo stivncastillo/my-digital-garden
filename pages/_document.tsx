@@ -6,10 +6,6 @@ class MyDocument extends Document {
       <Html prefix="og: https://ogp.me/ns#" className="scroll-smooth">
         <Head>
           <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1"
-          ></meta>
-          <meta
             name="keywords"
             content="learning, code posts, notes, tutorials, web development, mobile development"
           />
@@ -33,6 +29,16 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;700&family=Open+Sans:wght@300;400;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin=""
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+            rel="stylesheet"
+          ></link>
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>

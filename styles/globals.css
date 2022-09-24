@@ -40,7 +40,7 @@
   }
   code,
   pre {
-   @apply bg-slate-50 dark:bg-slate-800 text-rose-600 dark:text-yellow-500 px-1 py-0.5;
+    @apply bg-slate-50 dark:bg-slate-800 text-rose-600 dark:text-yellow-500 px-1 py-0.5;
   }
   table {
     @apply table-auto;
@@ -69,4 +69,4 @@
   }
 }
 
-@import "./vendor/prims.css";
+@import './vendor/prims.css';

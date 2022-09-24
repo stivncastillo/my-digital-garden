@@ -9,9 +9,9 @@ const ThemeButton = ({ onClick, theme }: Props) => {
   return (
     <button
       type="button"
-      aria-label="dark mode toggle"
+      aria-label="dark-mode-toggle"
       onClick={onClick}
-      className="text-2xl dark:text-slate-50"
+      className="text-2xl dark:text-slate-50 p-0.5"
     >
       {theme === 'dark' ? <IoIosSunny /> : <IoIosMoon />}
     </button>

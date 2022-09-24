@@ -19,7 +19,7 @@ const PostCard = ({ pinned, slim, data }: Props) => {
 
   return (
     <Link href={`/blog/${slug}`}>
-      <a className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg">
+      <a className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg transition duration-150 ease-linear">
         <article className="flex flex-row space-x-4 p-4">
           <div className="flex flex-col items-center">
             <div
@@ -49,7 +49,7 @@ const PostCard = ({ pinned, slim, data }: Props) => {
               {title}
             </h3>
             <p
-              className={`text-slate-500 font-thin dark:text-slate-400 ${
+              className={`text-slate-500 font-normal dark:text-slate-400 ${
                 slim ? 'text-sm' : 'text-md'
               }`}
             >
