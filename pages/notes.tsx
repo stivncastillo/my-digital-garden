@@ -1,8 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import { getAllFilesFrontMatter } from '../lib/mdx'
-import { useRouter } from 'next/router'
 import { filterByCategory, groupByKey } from 'notes/utils/notesUtils'
 import Header from 'notes/components/Header'
 import NotesList from 'notes/components/NotesList'

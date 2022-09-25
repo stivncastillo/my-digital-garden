@@ -19,6 +19,7 @@
       "components/*": ["./components/*"],
       "home/*": ["./features/Home/*"],
       "notes/*": ["./features/Notes/*"],
+      "blog/*": ["./features/Blog/*"],
     }
   },
   "include": [
