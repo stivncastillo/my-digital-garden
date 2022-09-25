@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import React from 'react'
-import PostCard from '../../../components/Posts/PostCard'
+import PostCard from 'blog/components/PostCard'
 import HomeSection from './HomeSection'
 
 type Props = {
