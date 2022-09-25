@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { GiRead } from 'react-icons/gi'
-import { BookType } from '../../data/data'
+import { BookType } from '../../../data/data'
 
 const Book = ({ title, author, image, current, link }: BookType) => {
   return (

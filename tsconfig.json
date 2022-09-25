@@ -20,6 +20,7 @@
       "home/*": ["./features/Home/*"],
       "notes/*": ["./features/Notes/*"],
       "blog/*": ["./features/Blog/*"],
+      "books/*": ["./features/Books/*"],
     }
   },
   "include": [
