@@ -3,12 +3,9 @@ import Head from 'next/head'
 
 import { getAllFilesFrontMatter } from '../lib/mdx'
 import { useRouter } from 'next/router'
-import {
-  filterByCategory,
-  groupByKey,
-} from '../features/Notes/utils/notesUtils'
-import Header from '../features/Notes/components/Header'
-import NotesList from '../features/Notes/components/NotesList'
+import { filterByCategory, groupByKey } from 'notes/utils/notesUtils'
+import Header from 'notes/components/Header'
+import NotesList from 'notes/components/NotesList'
 
 const Notes = ({ notes }: { notes: FrontMatter[] }) => {
   const { query } = useRouter()

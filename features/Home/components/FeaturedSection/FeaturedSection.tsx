@@ -1,19 +1,14 @@
-import Link from 'next/link'
 import React from 'react'
-import Image from 'next/image'
 import { FaBoxOpen, FaLaptopCode } from 'react-icons/fa'
 import { ImPencil } from 'react-icons/im'
 import DefaultCard from './Cards/DefaultCard'
 import BookCard from './Cards/BookCard'
+import HomeSection from 'home/components/HomeSection'
 
 const FeaturedSection: React.VFC = () => {
   return (
-    <section>
-      <div className="flex flex-row justify-between items-center mb-4">
-        <h2 className="text-3xl font-bold dark:text-slate-100">Destacado</h2>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 gap-6 px-2 md:px-4">
+    <HomeSection title="Destacado">
+      <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1 md:grid-rows-2 gap-6">
         <DefaultCard
           color="default"
           title="Code"
@@ -32,9 +27,9 @@ const FeaturedSection: React.VFC = () => {
         />
 
         <BookCard
-          title="Atomic Habits"
-          author="James Clear"
-          image="/assets/images/books/atomic.jpg"
+          title="El despertar del leviatán"
+          author="James S.A. Corey"
+          image="/assets/images/books/expanse1.jpg"
         />
 
         <DefaultCard
@@ -46,7 +41,7 @@ const FeaturedSection: React.VFC = () => {
           icon={FaBoxOpen}
         />
       </div>
-    </section>
+    </HomeSection>
   )
 }
 

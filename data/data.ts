@@ -15,10 +15,10 @@ export const books: BookType[] = [
     current: true
   },
   {
-    title:"Esbozos Filosóficos",
-    author:"Damián Pachón Soto",
-    image:"/assets/images/books/esbozos.jpg",
-    link: "https://www.iberlibro.com/servlet/BookDetailsPL?bi=30789360307",
+    title:" Cómo ganar amigos e influir sobre las personas",
+    author:"Dale Carnegie",
+    image:"/assets/images/books/amigos.jpg",
+    link: "https://www.goodreads.com/book/show/18954937-c-mo-ganar-amigos-e-influir-sobre-las-personas",
     current: true
   },
   {
@@ -27,6 +27,13 @@ export const books: BookType[] = [
     image:"/assets/images/books/testing.jpg",
     link: "https://www.goodreads.com/book/show/58052469-simplify-testing-with-react-testing-library",
     current: true
+  },
+  {
+    title:"Esbozos Filosóficos",
+    author:"Damián Pachón Soto",
+    image:"/assets/images/books/esbozos.jpg",
+    link: "https://www.iberlibro.com/servlet/BookDetailsPL?bi=30789360307",
+    current: false
   },
   {
     title:"Atomic Habits",

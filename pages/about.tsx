@@ -18,11 +18,6 @@ const About = () => {
 
       <figure className="flex flex-col-reverse justify-start mb-2">
         <div className="flex flex-col flex-1 space-y-4 mt-4">
-          <p className="text-slate-500 dark:text-slate-300 font-thin text-xl">
-            Frontend developer at Elenas. Begginer writer, speaker, UI Designer
-            and Tattoo entusiast, based in Armenia, Colombia.
-          </p>
-
           <p className="text-slate-500 dark:text-slate-300 font-thin">
             Desde que aprendí a programar en el colegio mi pasión por crear
             sistemas ha aumentado con el paso del tiempo. Inicie estudiando

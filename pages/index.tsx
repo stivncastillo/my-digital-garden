@@ -7,15 +7,22 @@ import {
   PostsSection,
   SocialList,
   FeaturedSection,
-} from '../features/Home/components'
-import { getHomePosts, getPinnedPost } from '../features/Home/utils/postsUtils'
+} from 'home/components'
+import {
+  getHomeNotes,
+  getHomePosts,
+  getPinnedPost,
+} from 'home/utils/postsUtils'
+import NotesSection from 'home/components/NotesSection'
 
 interface Props {
   posts: FrontMatter[]
+  notes: FrontMatter[]
 }
 
-const Home: NextPage<Props> = ({ posts }) => {
+const Home: NextPage<Props> = ({ posts, notes }) => {
   const sortedPosts = getHomePosts({ number: 2, posts })
+  const sortedNotes = getHomeNotes({ number: 4, notes })
   const pinnedPost = getPinnedPost(posts)
 
   return (
@@ -24,7 +31,7 @@ const Home: NextPage<Props> = ({ posts }) => {
         <title>Stiven Castillo | Digital Garden</title>
         <meta
           name="description"
-          content="Stiven Castillo es un desarrollador frontend y diseñador de interfaces de usuario, trabaja en Elenas app."
+          content="Stiven Castillo es un Frontend Engineer y diseñador de interfaces de usuario, trabaja en Elenas app."
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={process.env.NEXT_PUBLIC_DOMAIN} />
@@ -33,6 +40,7 @@ const Home: NextPage<Props> = ({ posts }) => {
       <Hero />
       <SocialList />
       <PostsSection posts={sortedPosts} pinnedPost={pinnedPost} />
+      <NotesSection notes={sortedNotes} />
       <FeaturedSection />
     </>
   )
@@ -40,8 +48,9 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
+  const notes = await getAllFilesFrontMatter('notes')
 
-  return { props: { posts } }
+  return { props: { posts, notes } }
 }
 
 export default Home

@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import { IoIosBookmark } from 'react-icons/io'
 import format from 'date-fns/format'
 import Link from 'next/link'
 
@@ -19,8 +18,8 @@ const PostCard = ({ pinned, slim, data }: Props) => {
 
   return (
     <Link href={`/blog/${slug}`}>
-      <a className="group mb-4 hover:bg-slate-50 dark:hover:bg-slate-800 hover:rounded-lg transition duration-150 ease-linear">
-        <article className="flex flex-row space-x-4 p-4">
+      <a className="group mb-6">
+        <article className="flex flex-row space-x-4">
           <div className="flex flex-col items-center">
             <div
               className={`flex flex-col ${
@@ -36,16 +35,10 @@ const PostCard = ({ pinned, slim, data }: Props) => {
                 {day}
               </span>
             </div>
-
-            {pinned && (
-              <span className="text-indigo-500 dark:text-yellow-500 mt-2">
-                <IoIosBookmark size={20} />
-              </span>
-            )}
           </div>
 
           <div className="flex-1">
-            <h3 className="text-2xl mb-2 mt-0 font-bold dark:text-slate-100">
+            <h3 className="text-xl mb-2 mt-0 font-bold dark:text-slate-100">
               {title}
             </h3>
             <p

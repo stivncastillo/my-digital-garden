@@ -9,13 +9,15 @@ const Hero: React.VFC = () => {
         <h1 className="text-4xl dark:text-white">
           Hey, I'm{' '}
           <Link href="/about">
-            <a className="link no-underline">Stiven Castillo</a>
-          </Link>
+            <a className="link no-underline">Stiven</a>
+          </Link>{' '}
+          👋🏼
         </h1>
 
         <p className="text-slate-500 dark:text-slate-300 font-normal text-xl">
-          JavaScript developer. Begginer writer, speaker, UI Designer and Tattoo
-          entusiast, based in Cali, Colombia.
+          I'm currently a Frontend Engineer. I'm also a dad, begginer writer,
+          speaker, UI designer and tattoo entusiast, I live in Cali, Colombia
+          🇨🇴.
         </p>
       </div>
       <div className="w-24 md:w-36">

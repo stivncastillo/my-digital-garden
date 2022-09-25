@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { Fragment } from 'react'
 import Crumb from './Crumb'
 
 type Props = {}
@@ -30,10 +30,10 @@ const Breadcrumbs = (props: Props) => {
         const isLast = idx === breadcrumbs.length - 1
         const isFirst = idx === 0
         return (
-          <>
-            <Crumb {...crumb} key={idx} isLast={isLast} />
+          <Fragment key={idx}>
+            <Crumb {...crumb} isLast={isLast} />
             {!isFirst && !isLast && <span>/</span>}
-          </>
+          </Fragment>
         )
       })}
     </div>
