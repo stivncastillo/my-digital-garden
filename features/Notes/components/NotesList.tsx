@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
-import { MdFolderOpen } from 'react-icons/md'
-import Alert from '../../../components/Common/Alert'
-import NotesCard from '../../../components/Notes/NotesCard'
+import Alert from 'components/Common/Alert'
+import NotesCard from './NotesCard'
 import { GroupByType } from '../types'
-
+import NotesCategory from './NotesCategory'
 interface Props {
   notes: GroupByType
   category: string
@@ -27,23 +26,17 @@ const NotesList: React.VFC<Props> = ({ notes: finalNotes, category }) => {
   return (
     <>
       {finalNotes &&
-        Object.keys(finalNotes).map((category: string, index: number) => {
+        Object.keys(finalNotes).map((category: string) => {
           const notes = finalNotes[category]
 
           return (
-            <div key={`category-${index}`} className="mb-4">
-              <div className="flex flex-row items-center space-x-2 mb-2">
-                <div className="text-2xl">
-                  <MdFolderOpen />
-                </div>
-                <h3 className="text-2xl mb-0 mt-0">{category}</h3>
-              </div>
+            <NotesCategory name={category} key={`category-${category}`}>
               {notes.map((frontMatter: FrontMatter, index) => (
                 <div key={`note-${index}`} className="flex flex-col px-4">
                   <NotesCard data={frontMatter} />
                 </div>
               ))}
-            </div>
+            </NotesCategory>
           )
         })}
     </>

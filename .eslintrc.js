@@ -20,6 +20,6 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'warn'
   },
 }
