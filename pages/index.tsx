@@ -14,6 +14,7 @@ import {
   getPinnedPost,
 } from 'home/utils/postsUtils'
 import NotesSection from 'home/components/NotesSection'
+import TalksSection from 'home/components/TalksSection'
 
 interface Props {
   posts: FrontMatter[]
@@ -41,6 +42,7 @@ const Home: NextPage<Props> = ({ posts, notes }) => {
       <SocialList />
       <PostsSection posts={sortedPosts} pinnedPost={pinnedPost} />
       <NotesSection notes={sortedNotes} />
+      <TalksSection />
       <FeaturedSection />
     </>
   )

@@ -18,7 +18,7 @@ const NotesSection = ({ notes }: Props) => {
         {notes.map(({ title, publishedAt, slug }: FrontMatter) => (
           <li key={slug}>
             <Link href={`/notes/${slug}`}>
-              <a className="flex flex-col py-3 px-5 bg-slate-800/90 border-none rounded-md hover:bg-slate-800/80">
+              <a className="flex flex-col py-3 px-5 border-none rounded-md bg-slate-100/80 hover:bg-slate-100/100 dark:bg-slate-800/90 dark:hover:bg-slate-800/80 transition duration-150">
                 <span>{title}</span>
                 <span className="text-slate-400 text-sm">
                   {format(new Date(publishedAt), 'd MMM yyyy')}
