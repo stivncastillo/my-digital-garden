@@ -18,7 +18,7 @@ const BookCard: React.VFC<Props> = ({
   author,
 }) => {
   return (
-    <div className="bg-slate-100 dark:bg-slate-600 rounded-xl m-h-56 p-4 flex flex-col space-y-4 justify-between">
+    <div className="bg-slate-100 dark:bg-slate-600 rounded-md m-h-56 p-4 flex flex-col space-y-4 justify-between">
       <div className="flex flex-row items-end space-x-4">
         <Image
           src={image}

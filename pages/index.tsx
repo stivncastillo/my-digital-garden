@@ -15,13 +15,16 @@ import {
 } from 'home/utils/postsUtils'
 import NotesSection from 'home/components/NotesSection'
 import TalksSection from 'home/components/TalksSection'
+import { talks, TalkType } from 'data/data'
 
 interface Props {
   posts: FrontMatter[]
   notes: FrontMatter[]
+  talks: TalkType[]
 }
 
-const Home: NextPage<Props> = ({ posts, notes }) => {
+const Home: NextPage<Props> = ({ posts, notes, talks }) => {
+  console.log('👻 ~ file: index.tsx ~ line 27 ~ talks', talks)
   const sortedPosts = getHomePosts({ number: 2, posts })
   const sortedNotes = getHomeNotes({ number: 4, notes })
   const pinnedPost = getPinnedPost(posts)
@@ -40,9 +43,11 @@ const Home: NextPage<Props> = ({ posts, notes }) => {
 
       <Hero />
       <SocialList />
-      <PostsSection posts={sortedPosts} pinnedPost={pinnedPost} />
-      <NotesSection notes={sortedNotes} />
-      <TalksSection />
+      {sortedPosts && (
+        <PostsSection posts={sortedPosts} pinnedPost={pinnedPost} />
+      )}
+      {sortedNotes && <NotesSection notes={sortedNotes} />}
+      {talks && <TalksSection talks={talks} />}
       <FeaturedSection />
     </>
   )
@@ -52,7 +57,7 @@ export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
   const notes = await getAllFilesFrontMatter('notes')
 
-  return { props: { posts, notes } }
+  return { props: { posts, notes, talks } }
 }
 
 export default Home
