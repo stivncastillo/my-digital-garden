@@ -15,7 +15,7 @@ const TalksSection = ({ talks }: Props) => {
     >
       <ul className="grid grid-flow-col grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-2">
         {talks.map((talk, index) => (
-          <TalkCard featured={index === 0} {...talk} />
+          <TalkCard featured={index === 0} key={index} {...talk} />
         ))}
       </ul>
     </HomeSection>
