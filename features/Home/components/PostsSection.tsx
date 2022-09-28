@@ -12,7 +12,7 @@ const PostsSection: React.VFC<Props> = ({ posts, pinnedPost }) => {
     <HomeSection
       title="Posts Recientes"
       showMoreHref="/blog"
-      className="flex flex-col flex-1 space-y-1 mb-8"
+      className="flex flex-col flex-1 space-y-1"
     >
       <div className="flex flex-col">
         {pinnedPost && <PostCard data={pinnedPost} pinned slim />}

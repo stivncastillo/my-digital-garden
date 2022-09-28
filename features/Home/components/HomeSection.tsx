@@ -11,11 +11,12 @@ const HomeSection: React.FC<Props> = ({
   children,
   title,
   showMoreHref,
+  className,
   ...props
 }) => {
   return (
-    <section {...props}>
-      <div className="flex flex-row justify-between items-center mb-6">
+    <section className={`mb-12 ${className}`} {...props}>
+      <div className="flex flex-row justify-between items-center mb-2">
         <h2 className="text-3xl font-bold dark:text-slate-100">{title}</h2>
 
         {showMoreHref && (

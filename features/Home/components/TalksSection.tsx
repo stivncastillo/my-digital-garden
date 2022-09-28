@@ -11,7 +11,7 @@ const TalksSection = ({ talks }: Props) => {
   return (
     <HomeSection
       title="Últimos Talks"
-      className="flex flex-col flex-1 space-y-1 mb-8"
+      className="flex flex-col flex-1 space-y-1"
     >
       <ul className="grid grid-flow-col grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-2">
         {talks.map((talk, index) => (

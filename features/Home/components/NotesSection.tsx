@@ -12,7 +12,7 @@ const NotesSection = ({ notes }: Props) => {
     <HomeSection
       title="Notas Recientes"
       showMoreHref="/notes"
-      className="flex flex-col flex-1 space-y-1 mb-8"
+      className="flex flex-col flex-1 space-y-1"
     >
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {notes.map(({ title, publishedAt, slug }: FrontMatter) => (
