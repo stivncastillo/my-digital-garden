@@ -1,11 +1,15 @@
 ---
 title: 'CSS Recipes'
-publishedAt: '2022-04-05'
+publishedAt: '2022-10-03'
 summary: 'Técnicas y fragmentos utiles de CSS para la web.'
 pinned: true
 category: 'Code'
 author: 'Stiven Castillo'
 ---
+
+<TOCInline toc={toc} fromHeading={3} toHeading={4} indentDepth={4} />
+
+
 ### Container Query
 
 Es la habilidad de un elemento de renderizarce en diferentes formas según el tamaño de su contenedor padre.
@@ -51,5 +55,28 @@ al establecer `grid-template-columns` o `grid-template-rowsen` subgrid, se aline
 .subitem {
   grid-column: 3 / 6;
   grid-row: 1 / 3;
+}
+```
+
+### 3 ways to center element
+
+```css
+// with grid
+.grid {
+  display: grid;
+  place-items: center;
+}
+// with position absolute
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+// with flex
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 ```

@@ -24,7 +24,6 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ posts, notes, talks }) => {
-  console.log('👻 ~ file: index.tsx ~ line 27 ~ talks', talks)
   const sortedPosts = getHomePosts({ number: 2, posts })
   const sortedNotes = getHomeNotes({ number: 4, notes })
   const pinnedPost = getPinnedPost(posts)
@@ -35,7 +34,7 @@ const Home: NextPage<Props> = ({ posts, notes, talks }) => {
         <title>Stiven Castillo | Digital Garden</title>
         <meta
           name="description"
-          content="Stiven Castillo es un Frontend Engineer y diseñador de interfaces de usuario, trabaja en Elenas app."
+          content="Stiven Castillo es un Javascript Engineer enfócado al desarrollo Frontend."
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={process.env.NEXT_PUBLIC_DOMAIN} />
